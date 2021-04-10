@@ -3,17 +3,17 @@ var exports = (module.exports = {});
 // VARIABLES
 
 // BOX MODEL
-exports.bs = "box-sizing";
+exports.box = "box-sizing";
 
 // TYPOGRAPHY
 exports.ff = "font-family";
 exports.fw = "font-weight";
-exports.fs = "font-size:px-s";
-exports.fsp = "font-size:%-s";
+exports.fs = "font-size";
 
 // COLORS
-exports.bghex = "background-color:#-p";
-exports.clhex = "color:#-p";
+exports.bg = "background";
+exports.bgc = "background-color";
+exports.cl = "color";
 
 // DISPLAY
 exports.d = "display";
@@ -22,6 +22,7 @@ exports.d = "display";
 exports.ai = "align-items";
 exports.jc = "justify-content";
 exports.fg = "flex-grow";
+exports.fd = "flex-direction";
 exports.fls = "flex-shrink";
 exports.fl = "flex";
 
@@ -29,33 +30,28 @@ exports.fl = "flex";
 exports.gtc = "grid-template-columns";
 exports.gta = "grid-template-areas";
 
+// POSITION
+exports.pos = "position";
+
 // SIZING
-exports.col = "width:%-s";
-exports.w = "width:px-s";
-exports.wp = "width:%-s";
-exports.h = "height:px-s";
-exports.hp = "height:%-s";
-exports.mw = "max-width:px-s";
-exports.mwp = "max-width:%-s";
+exports.col = "width";
+exports.w = "width";
+exports.h = "height";
+exports.mw = "max-width";
 
 // PADDING
-exports.p = "padding:px-s";
-exports.pt = "padding-top:px-s";
-exports.pr = "padding-right:px-s";
-exports.pl = "padding-left:px-s";
-exports.pb = "padding-bottom:px-s";
+exports.p = "padding";
+exports.pt = "padding-top";
+exports.pr = "padding-right";
+exports.pl = "padding-left";
+exports.pb = "padding-bottom";
 
 // MARGIN
-exports.m = "margin:px-s";
-exports.mt = "margin-top:px-s";
-exports.mr = "margin-right:px-s";
-exports.ml = "margin-left:px-s";
-exports.mb = "margin-bottom:px-s";
-exports.ma = "margin";
-exports.mta = "margin-top";
-exports.mra = "margin-right";
-exports.mla = "margin-left";
-exports.mba = "margin-bottom";
+exports.m = "margin";
+exports.mt = "margin-top";
+exports.mr = "margin-right";
+exports.ml = "margin-left";
+exports.mb = "margin-bottom";
 
 // BORDER
 exports.b = "border";
@@ -63,11 +59,21 @@ exports.bt = "border-top-style";
 exports.br = "border-right-style";
 exports.bb = "border-bottom-style";
 exports.bl = "border-left-style";
+exports.br = "border-radius";
 
 // TEXT UTILITIES
-exports.lh = "line-height:px-s";
-exports.ls = "letter-spacing:px-s";
+exports.lh = "line-height";
+exports.ls = "letter-spacing";
 exports.td = "text-decoration";
+exports.tal = "text-align";
 
 // CURSOR
 exports.cur = "cursor";
+
+// OVERFLOW
+exports.ov = "overflow";
+exports.ovx = "overflow-x";
+exports.ovy = "overflow-y";
+
+// BOX SHADOW
+exports.bxs = "box-shadow";
