@@ -2,6 +2,12 @@ var exports = (module.exports = {});
 
 // VARIABLES
 
+// BREAKPOINTS
+exports.sm = "240";
+exports.md = "768";
+exports.lg = "992";
+exports.xl = "1200";
+
 // BOX MODEL
 exports.box = "box-sizing";
 
@@ -37,7 +43,8 @@ exports.pos = "position";
 exports.col = "width";
 exports.w = "width";
 exports.h = "height";
-exports.mw = "max-width";
+exports.maxw = "max-width";
+exports.minw = "min-width";
 
 // PADDING
 exports.p = "padding";
@@ -77,3 +84,6 @@ exports.ovy = "overflow-y";
 
 // BOX SHADOW
 exports.bxs = "box-shadow";
+
+// TRANSITION
+exports.trns = "transition";

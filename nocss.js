@@ -26,19 +26,17 @@ var concat = require("concat");
 
 var finalOutput = "";
 
-glob("*.html", {}, function (err, files) {
+glob("*.html", {}, function(err, files) {
   // concat all html files for reading
-  concat(files).then((result) => {
+  concat(files).then(result => {
     // parse concatenated html file, parse all classes, and generate css
     finalOutput = magic.Magic(parser.ParseHTML(result));
     // write to build.css and later optimize
-    fs.writeFile("build.css", finalOutput, function (err) {
+    fs.writeFile("build.css", finalOutput, function(err) {
       if (err) throw err;
     });
   });
 });
-
-return;
 
 /*
 

@@ -1,22 +1,26 @@
 .m\:0 { margin: 0; }
-.ff\:GT_America { font-family: GT America; }
+.pl\:24px { padding-left: 24px; }
+.pr\:24px { padding-right: 24px; }
+.ff\:Styrene_A { font-family: Styrene A; }
+.fs\:48px { font-size: 48px; }
 .fs\:32px { font-size: 32px; }
 .fw\:bold { font-weight: bold; }
-.cl\:\#ff0000 { color: #ff0000; }
+.cl\:\#000 { color: #000; }
+.trns\:all_0\.4s_cubic-bezier\(1\,0\,0\,1\) { transition: all 0.4s cubic-bezier(1,0,0,1); }
 .cl\:gray { color: gray; }
 .fs\:24px { font-size: 24px; }
 .mt\:-12px { margin-top: -12px; }
-.w\:50\% { width: 50%; }
+.mb\:24px { margin-bottom: 24px; }
+.w\:100\% { width: 100%; }
 .h\:20vh { height: 20vh; }
-.br\:1000px { border-radius: 1000px; }
-.bg\:linear-gradient\(to_right\,\#ff0000\,\#0000ff\) { background: linear-gradient(to right,#ff0000,#0000ff); }
-.mb\:52px { margin-bottom: 52px; }
+.br\:20px { border-radius: 20px; }
+.bg\:linear-gradient\(to_left\,\#0000ff\,\#00ff00\) { background: linear-gradient(to left,#0000ff,#00ff00); }
 .d\:flex { display: flex; }
 .fd\:column { flex-direction: column; }
 .fl\:1 { flex: 1; }
-.b\:2px_solid_black { border: 2px solid black; }
-.bxs\:0_4px_30px_rgba\(0\,0\,0\,0\.5\) { box-shadow: 0 4px 30px rgba(0,0,0,0.5); }
+.b\:2px_solid_\#000 { border: 2px solid #000; }
+.bxs\:0_4px_30px_rgba\(0\,0\,0\,0\.2\) { box-shadow: 0 4px 30px rgba(0,0,0,0.2); }
+.p\:24px { padding: 24px; }
+.lh\:28px { line-height: 28px; }
 .d\:none { display: none; }
-.fs\:58 { font-size: 58; }
-.fs\:48px { font-size: 48px; }
-@media (min-width: 769px) {.fd\:769\:row { flex-direction: row!important; }.fl\:769\:2 { flex: 2!important; }.d\:769\:block { display: block!important; }}
+@media (min-width: 992px) {.fs\:lg\:72px { font-size: 72px!important; }.w\:lg\:50\% { width: 50%!important; }.fd\:lg\:row { flex-direction: row!important; }.d\:lg\:block { display: block!important; }}

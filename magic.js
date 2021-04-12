@@ -3,7 +3,7 @@ var u = require("./unit.js");
 var p = require("./property.js");
 
 var exports = (module.exports = {});
-exports.Magic = function (classes) {
+exports.Magic = function(classes) {
   // classes = array of unique css classes
   /**
    * 1. Loop through all classes
@@ -15,7 +15,7 @@ exports.Magic = function (classes) {
 
   var css = "";
 
-  var unitValue = function (value, unit) {
+  var unitValue = function(value, unit) {
     // modify values to correct css
     value = value.split("_").join(" ");
 
@@ -37,10 +37,10 @@ exports.Magic = function (classes) {
     }
   };
 
-  var className = function (string) {
+  var className = function(string) {
     let symbols = ["#", "(", ")", ",", "%", "."];
 
-    symbols.forEach(function (value, index) {
+    symbols.forEach(function(value, index) {
       string = string.split(value).join("\\" + value);
     });
 
@@ -49,25 +49,33 @@ exports.Magic = function (classes) {
 
   for (i = 0; i < classes.length; i++) {
     let classArr = classes[i].split(":");
-    let unit = u.Unit(v[classArr[0]]);
-    let property = p.Property(v[classArr[0]]);
 
-    // if media query added
-    if (classArr.length == 3) {
-      css += `@media (min-width: ${classArr[1]}px) {`;
-      css += `.${classArr[0]}\\:${classArr[1]}\\:${className(
-        classArr[2]
-      )} { ${property}: ${unitValue(classArr[2], unit)}!important; }`;
-      css += "}";
-      css += "\n";
-    }
+    // console.log(classArr);
 
-    // if no media query added
-    if (classArr.length == 2) {
-      css += `.${classArr[0]}\\:${className(
-        classArr[1]
-      )} { ${property}: ${unitValue(classArr[1], unit)}; }`;
-      css += "\n";
+    // naming class only
+    if (classArr.length == 1) {
+      continue;
+    } else {
+      let unit = u.Unit(v[classArr[0]]);
+      let property = p.Property(v[classArr[0]]);
+
+      // if media query added
+      if (classArr.length == 3) {
+        css += `@media (min-width: ${v[classArr[1]]}px) {`;
+        css += `.${classArr[0]}\\:${classArr[1]}\\:${className(
+          classArr[2]
+        )} { ${property}: ${unitValue(classArr[2], unit)}!important; }`;
+        css += "}";
+        css += "\n";
+      }
+
+      // if no media query added
+      if (classArr.length == 2) {
+        css += `.${classArr[0]}\\:${className(
+          classArr[1]
+        )} { ${property}: ${unitValue(classArr[1], unit)}; }`;
+        css += "\n";
+      }
     }
   }
 
