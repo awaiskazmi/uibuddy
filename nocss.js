@@ -1,103 +1,82 @@
-#!/usr/bin/env node
-
 /**
- * NOCSS
- * Started 8th, April 2021
- * Author: Awais Kazmi
+ * 1. watch folder for changes
+ * 2. get changed file path
+ * 3. read file at changed path
+ * 4. generate css for that file in a temp folder
+ * 5. concat all generated css files
+ * 6. run postcss on (5)
+ * 7. generate single style.min.css file
  */
 
-// "watch:nocss": "nodemon -e html,js -x \"npm run nocss\" ",
-
-// "postnocss": "concat-glob-cli -f \"*.css\" -o build.css.src && mqpacker build.css.src > style.css && css-minify -f style.css -o css && del \"*.css\" ",
-
-// css-minify -f style.css -o css
-
-// "postnocss": "mqpacker build.css > style.min.css && del build.css",
+// DIRECTORY TO WATCH
+console.log("I'm watching you!");
 
 const fs = require("fs");
-const glob = require("glob");
+const mkdirp = require("mkdirp");
+const chokidar = require("chokidar");
 const parser = require("./parseHTML.js");
 const magic = require("./magic.js");
+const glob = require("glob");
 const concat = require("concat");
 const postcss = require("postcss");
 
-// var mqpacker = require("css-mqpacker");
-// var source = process.argv.splice(2)[0];
-// var target = source.substring(0, source.lastIndexOf(".")) + ".css";
-// var filename = "style.css";
-// var output = "";
+// 1. watch folder for changes
+chokidar.watch(__dirname + "/*.html").on("all", (event, filePath) => {
+  desinationFilename = filePath.split("/");
+  desinationFilename = desinationFilename[desinationFilename.length - 1].split(
+    "."
+  )[0];
+  console.log("\x1b[36m%s\x1b[0m", "File change detected...");
 
-var finalOutput = "";
+  // 2 & 3. get changed file path and read file
+  fs.readFile(filePath, "utf-8", function(err, data) {
+    if (err) throw err;
 
-glob("*.html", {}, function(err, files) {
-  // concat all html files for reading
-  concat(files).then(html => {
-    // parse concatenated html file, parse all classes, and generate css
     finalOutput = magic.Magic(
-      parser.cssClasses(html),
-      parser.componentClasses(html)
+      parser.cssClasses(data),
+      parser.componentClasses(data)
     );
-    // run postcss and write style.min.css
-    postcss([
-      require("postcss-combine-duplicated-selectors"),
-      require("autoprefixer"),
-      require("css-mqpacker")
-    ])
-      .process(finalOutput, { from: "style.css", to: "style.min.css" })
-      .then(result => {
-        fs.writeFileSync("style.min.css", result.css);
-      });
+
+    // 4. generate css for that file in a temp folder
+    // fs.writeFile(filename, output, function(err) {
+    mkdirp(__dirname + "/tmp").then(made => {
+      var written = fs.writeFile(
+        __dirname + "/tmp/" + desinationFilename + ".css",
+        finalOutput,
+        "utf8",
+        function(err, data) {
+          if (err) throw err;
+          glob(__dirname + "/tmp/*.css", {}, function(err, files) {
+            // 5. concat all generated css files
+            concat(files).then(css => {
+              console.log("\x1b[33m%s\x1b[0m", "...concatenating files...");
+              // 6. run postcss on (5)
+              postcss([
+                require("postcss-combine-duplicated-selectors"),
+                require("autoprefixer"),
+                require("css-mqpacker")
+              ])
+                .process(css, {
+                  from: "style.css",
+                  to: "style.min.css"
+                })
+                .then(result => {
+                  console.log("\x1b[33m%s\x1b[0m", "...applying postcss...");
+                  // 7. generate single style.min.css file
+                  finalCss = fs.writeFile(
+                    __dirname + "/style.min.css",
+                    result.css,
+                    "utf8",
+                    function(err, data) {
+                      if (err) throw err;
+                      console.log("\x1b[32m%s\x1b[0m", "NOCSS complete!");
+                    }
+                  );
+                });
+            });
+          });
+        }
+      );
+    });
   });
 });
-
-/*
-
-// ======================================================
-// ======================================================
-// ORIGINAL CODE BELOW
-// ======================================================
-// ======================================================
-
-fs.readFile(source, "utf-8", function (err, data) {
-  if (err) throw err;
-
-  output = magic.Magic(parser.ParseHTML(data));
-
-  // fs.writeFile(filename, output, function(err) {
-  fs.writeFile(target, output, function (err) {
-    if (err) throw err;
-  });
-
-  // clear style.css
-  fs.writeFile("style.css", "", function (err) {
-    if (err) throw err;
-  });
-
-  // var result = mqpacker.pack(output, {
-  //   from: output,
-  //   map: {
-  //     inline: false,
-  //   },
-  //   sort: true,
-  //   // to: "style.min.css",
-  //   to: target,
-  // });
-
-  // fs.writeFileSync(target, result.css.toString());
-  // fs.writeFileSync("style.min.css", result.css.toString());
-  // fs.writeFileSync("style.min.css.map", result.map.toString());
-});
-
-// var result = mqpacker.pack(fs.readFileSync(filename, "utf8"), {
-//   from: filename,
-//   map: {
-//     inline: false
-//   },
-//   sort: true,
-//   to: "style.min.css"
-// });
-//
-// fs.writeFileSync("style.min.css", result.css);
-// fs.writeFileSync("style.min.css.map", result.map);
-
-*/

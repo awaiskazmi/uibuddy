@@ -21,10 +21,12 @@ exports.componentClasses = function(html) {
   var dom = new jsdom.JSDOM(html);
   var components = dom.window.document.querySelectorAll("[component]");
 
-  components.forEach(component => {
-    componentClasses[`component-${component.getAttribute("component")}`] =
-      component.classList.value;
-  });
+  if (components.length > 0) {
+    components.forEach(component => {
+      componentClasses[`component-${component.getAttribute("component")}`] =
+        component.classList.value;
+    });
+  }
 
   return componentClasses;
 };

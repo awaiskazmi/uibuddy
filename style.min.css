@@ -1,1 +1,205 @@
-.m\:0 { margin: 0!important; }.ff\:Styrene_A\,sans-serif { font-family: Styrene A,sans-serif!important; }.bbs\:solid { border-bottom-style: solid!important; }.bbw\:1px { border-bottom-width: 1px!important; }.bbc\:\#ddd { border-bottom-color: #ddd!important; }.p\:24px { padding: 24px!important; }.td\:none { text-decoration: none!important; }.clr\:\#777 { color: #777!important; }.hover\:clr\:\#111:hover { color: #111!important; }.pl\:24px { padding-left: 24px!important; }.pr\:24px { padding-right: 24px!important; }.fs\:48px { font-size: 48px!important; }.ls\:-4px { letter-spacing: -4px!important; }.mr\:8px { margin-right: 8px!important; }.fs\:1\.25em { font-size: 1.25em!important; }.val\:-5px { vertical-align: -5px!important; }.clr\:gray { color: gray!important; }.fs\:72px { font-size: 72px!important; }.fw\:bold { font-weight: bold!important; }.clr\:black { color: black!important; }.fs\:28px { font-size: 28px!important; }.clr\:\#555 { color: #555!important; }.clr\:blue { color: blue!important; }.bgc\:blue { background-color: blue!important; }.clr\:white { color: white!important; }.bgc\:\#eee { background-color: #eee!important; }.fs\:18px { font-size: 18px!important; }.br\:12px { border-radius: 12px!important; }.mb\:24px { margin-bottom: 24px!important; }.d\:inline-block { display: inline-block!important; }.w\:100\% { width: 100%!important; }.lg\:w\:50\%:lg { width: 50%!important; }.h\:20vh { height: 20vh!important; }.br\:20px { border-radius: 20px!important; }.bg\:linear-gradient\(to_left\,\#0000ff\,\#00ff00\) { background: linear-gradient(to left,#0000ff,#00ff00)!important; }.d\:block { display: block!important; }.bgc\:black { background-color: black!important; }.d\:flex { display: flex!important; }.fd\:column { flex-direction: column!important; }.lg\:fd\:row:lg { flex-direction: row!important; }.fl\:1 { flex: 1!important; }.b\:2px_solid_\#000 { border: 2px solid #000!important; }.bxs\:0_4px_30px_rgba\(0\,0\,0\,0\.2\) { box-shadow: 0 4px 30px rgba(0,0,0,0.2)!important; }.lh\:28px { line-height: 28px!important; }.d\:none { display: none!important; }.lg\:d\:block:lg { display: block!important; }.ai\:center { align-items: center!important; }.jc\:center { justify-content: center!important; }.clr\:\#fff { color: #fff!important; }.br\:1000px { border-radius: 1000px!important; }@media (min-width: hoverpx) {.hover\:clr\:\#111 { color: #111!important; }}@media (min-width: 992px) {.lg\:w\:50\% { width: 50%!important; }.lg\:fd\:row { flex-direction: row!important; }.lg\:d\:block { display: block!important; }.hover\:lg\:fs\:24px:hover { font-size: 24px!important; }.hover\:lg\:clr\:\#0000ff:hover { color: #0000ff!important; }}
+.m\:0 {
+  margin: 0;
+  margin: 0;
+}
+.ff\:Styrene_A\,sans-serif {
+  font-family: Styrene A, sans-serif;
+  font-family: Styrene A, sans-serif;
+}
+.bbs\:solid {
+  border-bottom-style: solid;
+  border-bottom-style: solid;
+}
+.bbw\:1px {
+  border-bottom-width: 1px;
+  border-bottom-width: 1px;
+}
+.bbc\:\#ddd {
+  border-bottom-color: #ddd;
+  border-bottom-color: #ddd;
+}
+.p\:24px {
+  padding: 24px;
+  padding: 24px;
+}
+.td\:none {
+  text-decoration: none;
+  text-decoration: none;
+}
+.clr\:\#777 {
+  color: #777;
+  color: #777;
+}
+.hover\:clr\:\#111:hover {
+  color: #111;
+  color: #111;
+}
+.pl\:24px {
+  padding-left: 24px;
+  padding-left: 24px;
+}
+.pr\:24px {
+  padding-right: 24px;
+  padding-right: 24px;
+}
+.fs\:48px {
+  font-size: 48px;
+  font-size: 48px;
+}
+.ls\:-4px {
+  letter-spacing: -4px;
+  letter-spacing: -4px;
+}
+.mr\:8px {
+  margin-right: 8px;
+  margin-right: 8px;
+}
+.fs\:1\.25em {
+  font-size: 1.25em;
+  font-size: 1.25em;
+}
+.val\:-5px {
+  vertical-align: -5px;
+  vertical-align: -5px;
+}
+.clr\:gray {
+  color: gray;
+  color: gray;
+}
+.fs\:72px {
+  font-size: 72px;
+  font-size: 72px;
+}
+.fw\:bold {
+  font-weight: bold;
+  font-weight: bold;
+}
+.clr\:black {
+  color: black;
+  color: black;
+}
+.fs\:69px {
+  font-size: 69px;
+}
+.fs\:28px {
+  font-size: 28px;
+}
+.clr\:\#555 {
+  color: #555;
+}
+.clr\:blue {
+  color: blue;
+}
+.bgc\:\#0000ff {
+  background-color: #0000ff;
+}
+.clr\:white {
+  color: white;
+}
+.bgc\:\#eee {
+  background-color: #eee;
+}
+.fs\:18px {
+  font-size: 18px;
+}
+.br\:12px {
+  border-radius: 12px;
+}
+.mb\:24px {
+  margin-bottom: 24px;
+}
+.d\:inline-block {
+  display: inline-block;
+}
+.fs\:10px {
+  font-size: 10px;
+}
+.ls\:4px {
+  letter-spacing: 4px;
+}
+.tt\:uppercase {
+  text-transform: uppercase;
+}
+.cur\:pointer {
+  cursor: pointer;
+}
+.br\:20px {
+  border-radius: 20px;
+}
+.bg\:linear-gradient\(to_left\,\#0000ff\,\#ff0000\) {
+  background: linear-gradient(to left, #0000ff, #ff0000);
+}
+.hover\:bg\:linear-gradient\(to_left\,\#ff0000\,\#0000ff\):hover {
+  background: linear-gradient(to left, #ff0000, #0000ff);
+}
+.clr\:\#fff {
+  color: #fff;
+}
+.d\:block {
+  display: block;
+}
+.bgc\:black {
+  background-color: black;
+}
+.d\:flex {
+  display: flex;
+}
+.fd\:column {
+  flex-direction: column;
+}
+.fl\:1 {
+  flex: 1;
+}
+.b\:2px_solid_\#000 {
+  border: 2px solid #000;
+}
+.bxs\:0_4px_30px_rgba\(0\,0\,0\,0\.2\) {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+.lh\:28px {
+  line-height: 28px;
+}
+.d\:none {
+  display: none;
+}
+.br\:1000px {
+  border-radius: 1000px;
+}
+.component-logo {
+  margin-right: 8px !important;
+  font-size: 1.25em !important;
+  vertical-align: -5px !important;
+  color: gray !important;
+}
+.component-label {
+  font-size: 10px !important;
+  letter-spacing: 4px !important;
+  color: gray !important;
+  text-transform: uppercase !important;
+}
+.component-btn {
+  cursor: pointer !important;
+  display: inline-block !important;
+  padding: 24px !important;
+  border-radius: 20px !important;
+  background: linear-gradient(to left, #0000ff, #ff0000) !important;
+  color: #fff !important;
+  margin-bottom: 24px !important;
+}
+.component-btn:hover {
+  background: linear-gradient(to left, #ff0000, #0000ff) !important;
+}
+@media (min-width: 992px) {
+  .lg\:fd\:row {
+    flex-direction: row;
+  }
+  .lg\:d\:block {
+    display: block;
+  }
+  .hover\:lg\:fs\:24px:hover {
+    font-size: 24px;
+  }
+  .hover\:lg\:clr\:\#0000ff:hover {
+    color: #0000ff;
+  }
+}

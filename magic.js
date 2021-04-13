@@ -65,7 +65,7 @@ exports.Magic = function(classes, componentClasses) {
             classArr[2]
           }\\:${className(classArr[3])}:${
             classArr[0]
-          } { ${property}: ${unitValue(classArr[3], unit)}!important; }`;
+          } { ${property}: ${unitValue(classArr[3], unit)}; }`;
           css += "}";
         }
 
@@ -84,7 +84,7 @@ exports.Magic = function(classes, componentClasses) {
             css += `@media (min-width: ${v[classArr[0]]}px) {`;
             css += `.${classArr[0]}\\:${classArr[1]}\\:${className(
               classArr[2]
-            )} { ${property}: ${unitValue(classArr[2], unit)}!important; }`;
+            )} { ${property}: ${unitValue(classArr[2], unit)}; }`;
             css += "}";
           }
 
@@ -99,7 +99,7 @@ exports.Magic = function(classes, componentClasses) {
             )}:${classArr[0]} { ${property}: ${unitValue(
               classArr[2],
               unit
-            )}!important; }`;
+            )}; }`;
           }
         }
 
@@ -109,7 +109,7 @@ exports.Magic = function(classes, componentClasses) {
           property = p.Property(v[classArr[0]]);
           css += `.${classArr[0]}\\:${className(
             classArr[1]
-          )} { ${property}: ${unitValue(classArr[1], unit)}!important; }`;
+          )} { ${property}: ${unitValue(classArr[1], unit)}; }`;
         }
       }
     }
