@@ -1,4 +1,3 @@
 node_modules/
-css-dist/
-/*.css
+app.min.js
 style.min.css
