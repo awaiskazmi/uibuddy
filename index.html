@@ -9,41 +9,76 @@
       * {
         box-sizing: border-box;
       }
+      .code {
+        font-family: "Sometype Mono", monospace;
+      }
     </style>
     <link rel="stylesheet" href="./style.min.css" />
   </head>
-  <body class="m:0 pl:24px pr:24px ff:Styrene_A">
-    <div>
-      <p class="display my-custom-class fs:48px fs:lg:72px m:0">
-        THIS IS NOCSS
-      </p>
-      <h1 class="fs:32px fw:bold cl:#000 trns:all_0.4s_cubic-bezier(1,0,0,1)">
-        This Is a Heading
-      </h1>
-      <p class="cl:gray fs:24px mt:-12px mb:24px">This is a description</p>
-      <div
-        class="w:100% w:lg:50% h:20vh br:20px bg:linear-gradient(to_left,#0000ff,#00ff00) mb:24px"
-      ></div>
-      <div class="d:flex fd:column fd:lg:row mb:24px">
-        <div
-          class="fl:1 b:2px_solid_#000 br:20px bxs:0_4px_30px_rgba(0,0,0,0.2)"
+  <body class="m:0 ff:Styrene_A,sans-serif">
+    <header>
+      <nav class="bbs:solid bbw:1px bbc:#ddd p:24px">
+        <a class="td:none clr:#777 hover:clr:#111" href="/documentation.html"
+          >Documentation</a
         >
-          <p class="p:24px lh:28px m:0">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut
-            pariatur explicabo illum repellendus aspernatur delectus et harum
-            quo recusandae iure quae natus velit nostrum ipsum, molestiae nemo
-            voluptatem cupiditate quod dolores. Distinctio, aspernatur eveniet
-            hic facilis ex, saepe esse voluptas, ducimus odit perspiciatis ab
-            ipsum. Expedita asperiores provident architecto libero.
-          </p>
-        </div>
-        <div class="fl:1 d:none d:lg:block pl:24px pr:24px">
-          <h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-            veniam nesciunt at, accusamus aut et?
-          </h3>
+      </nav>
+    </header>
+    <main class="pl:24px pr:24px">
+      <div>
+        <p class="display my-custom-class fs:48px ls:-4px">
+          <span id="logo" class="mr:8px fs:1.25em val:-5px clr:gray"
+            >&empty;</span
+          >nocss
+        </p>
+        <h1 class="fs:72px fw:bold clr:black m:0">
+          Never write CSS again!
+        </h1>
+        <p class="fs:28px clr:#555">
+          Build websites just by writing HTML in an intuitive way with classes
+          like
+          <span class="code clr:blue">clr:blue, </span
+          ><span class="code bgc:blue clr:white">bgc:blue</span> and let us take
+          care of the CSS for you!
+        </p>
+        <code
+          class="code bgc:#eee fs:18px p:24px br:12px mb:24px d:inline-block"
+          >$ npm install @syawais/nocss</code
+        >
+        <div
+          id="btn"
+          class="w:100% lg:w:50% h:20vh br:20px bg:linear-gradient(to_left,#0000ff,#00ff00) mb:24px"
+        ></div>
+        <code class="code d:block bgc:black br:12px p:24px mb:24px clr:white"
+          >&lt;h1&gt;This is so cool&lt;/h1&gt;</code
+        >
+        <div class="d:flex fd:column lg:fd:row mb:24px">
+          <div
+            class="fl:1 b:2px_solid_#000 br:20px bxs:0_4px_30px_rgba(0,0,0,0.2)"
+          >
+            <p class="p:24px lh:28px m:0">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut
+              pariatur explicabo illum repellendus aspernatur delectus et harum
+              quo recusandae iure quae natus velit nostrum ipsum, molestiae nemo
+              voluptatem cupiditate quod dolores. Distinctio, aspernatur eveniet
+              hic facilis ex, saepe esse voluptas, ducimus odit perspiciatis ab
+              ipsum. Expedita asperiores provident architecto libero.
+            </p>
+          </div>
+          <div
+            class="fl:1 d:none lg:d:block pl:24px pr:24px hover:lg:fs:24px hover:lg:clr:#0000ff"
+          >
+            <h3>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+              veniam nesciunt at, accusamus aut et?
+            </h3>
+          </div>
         </div>
       </div>
-    </div>
+      <div ref="btn" class="d:flex ai:center jc:center clr:#fff br:1000px">
+        I'm referencing the gradient box with overridden border radius!
+      </div>
+    </main>
+    <footer></footer>
+    <script src="./app.js"></script>
   </body>
 </html>

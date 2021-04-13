@@ -38,7 +38,7 @@ exports.Magic = function(classes) {
   };
 
   var className = function(string) {
-    let symbols = ["#", "(", ")", ",", "%", "."];
+    let symbols = ["#", "(", ")", ",", "%", ".", "'"];
 
     symbols.forEach(function(value, index) {
       string = string.split(value).join("\\" + value);
@@ -49,6 +49,7 @@ exports.Magic = function(classes) {
 
   for (i = 0; i < classes.length; i++) {
     let classArr = classes[i].split(":");
+    var unit, property;
 
     // console.log(classArr);
 
@@ -56,25 +57,53 @@ exports.Magic = function(classes) {
     if (classArr.length == 1) {
       continue;
     } else {
-      let unit = u.Unit(v[classArr[0]]);
-      let property = p.Property(v[classArr[0]]);
+      // if both media query & state added
+      if (classArr.length == 4) {
+        unit = u.Unit(v[classArr[2]]);
+        property = p.Property(v[classArr[2]]);
 
-      // if media query added
-      if (classArr.length == 3) {
         css += `@media (min-width: ${v[classArr[1]]}px) {`;
-        css += `.${classArr[0]}\\:${classArr[1]}\\:${className(
-          classArr[2]
-        )} { ${property}: ${unitValue(classArr[2], unit)}!important; }`;
+        css += `.${classArr[0]}\\:${classArr[1]}\\:${classArr[2]}\\:${className(
+          classArr[3]
+        )}:${classArr[0]} { ${property}: ${unitValue(
+          classArr[3],
+          unit
+        )}!important; }`;
         css += "}";
-        css += "\n";
+      }
+
+      // if media query/state added
+      if (classArr.length == 3) {
+        unit = u.Unit(v[classArr[1]]);
+        property = p.Property(v[classArr[1]]);
+
+        // if media query
+        if (classArr[0] == "sm" || "md" || "lg" || "xl") {
+          css += `@media (min-width: ${v[classArr[0]]}px) {`;
+          css += `.${classArr[0]}\\:${classArr[1]}\\:${className(
+            classArr[2]
+          )} { ${property}: ${unitValue(classArr[2], unit)}!important; }`;
+          css += "}";
+        }
+
+        // if state
+        if (classArr[0] == "hover" || "focus" || "active") {
+          css += `.${classArr[0]}\\:${classArr[1]}\\:${className(
+            classArr[2]
+          )}:${classArr[0]} { ${property}: ${unitValue(
+            classArr[2],
+            unit
+          )}!important; }`;
+        }
       }
 
       // if no media query added
       if (classArr.length == 2) {
+        unit = u.Unit(v[classArr[0]]);
+        property = p.Property(v[classArr[0]]);
         css += `.${classArr[0]}\\:${className(
           classArr[1]
-        )} { ${property}: ${unitValue(classArr[1], unit)}; }`;
-        css += "\n";
+        )} { ${property}: ${unitValue(classArr[1], unit)}!important; }`;
       }
     }
   }

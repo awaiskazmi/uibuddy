@@ -8,6 +8,11 @@ exports.md = "768";
 exports.lg = "992";
 exports.xl = "1200";
 
+// STATES
+exports.hover = "hover";
+exports.focus = "focus";
+exports.active = "focus";
+
 // BOX MODEL
 exports.box = "box-sizing";
 
@@ -19,7 +24,7 @@ exports.fs = "font-size";
 // COLORS
 exports.bg = "background";
 exports.bgc = "background-color";
-exports.cl = "color";
+exports.clr = "color";
 
 // DISPLAY
 exports.d = "display";
@@ -62,10 +67,20 @@ exports.mb = "margin-bottom";
 
 // BORDER
 exports.b = "border";
-exports.bt = "border-top-style";
-exports.br = "border-right-style";
-exports.bb = "border-bottom-style";
-exports.bl = "border-left-style";
+
+exports.bts = "border-top-style";
+exports.btw = "border-top-width";
+exports.btc = "border-top-color";
+exports.brs = "border-right-style";
+exports.brw = "border-right-width";
+exports.brc = "border-right-color";
+exports.bbs = "border-bottom-style";
+exports.bbw = "border-bottom-width";
+exports.bbc = "border-bottom-color";
+exports.bls = "border-left-style";
+exports.blw = "border-left-width";
+exports.blc = "border-left-color";
+
 exports.br = "border-radius";
 
 // TEXT UTILITIES
@@ -87,3 +102,9 @@ exports.bxs = "box-shadow";
 
 // TRANSITION
 exports.trns = "transition";
+
+// ANIMATION
+exports.anim = "animation";
+
+// VERTICAL ALIGN
+exports.val = "vertical-align";
