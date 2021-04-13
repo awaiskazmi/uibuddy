@@ -24,7 +24,7 @@ Build websites just by writing HTML in an intuitive way and let us take care of 
 
 #### Properties, Media Queries, and Pseudo-Classes!
 
-**nocss** supports all css properties, along with the addition of media queries and pseudo-classes making it extremely powerful, giving you the freedom to desing absolutely anything!
+**nocss** supports all css properties, along with the addition of media queries and pseudo-classes making it extremely powerful, giving you the freedom to design absolutely anything!
 
 #### Components
 
