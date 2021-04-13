@@ -7,6 +7,7 @@
     "npm-watch": "^0.9.0"
   },
   "devDependencies": {
+    "autoprefixer": "^10.2.5",
     "concat": "^1.0.3",
     "concat-cli": "^4.0.0",
     "concat-glob-cli": "^0.1.0",
@@ -14,13 +15,16 @@
     "css-mqpacker": "^7.0.0",
     "del-cli": "^3.0.1",
     "glob": "^7.1.6",
+    "jquery": "^3.6.0",
+    "jsdom": "^16.5.3",
     "nodemon": "^2.0.7",
     "npm-watch": "^0.9.0",
-    "onchange": "^7.1.0"
+    "onchange": "^7.1.0",
+    "postcss": "^8.2.10",
+    "postcss-combine-duplicated-selectors": "^10.0.2"
   },
   "scripts": {
     "nocss": "node nocss.js",
-    "postnocss": "mqpacker build.css > style.min.css && del build.css",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "onchange \"*.html\" -- npm run nocss {{changed}}"
   },

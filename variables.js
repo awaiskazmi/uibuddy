@@ -88,6 +88,7 @@ exports.lh = "line-height";
 exports.ls = "letter-spacing";
 exports.td = "text-decoration";
 exports.tal = "text-align";
+exports.tt = "text-transform";
 
 // CURSOR
 exports.cur = "cursor";

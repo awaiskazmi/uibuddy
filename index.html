@@ -26,7 +26,7 @@
     <main class="pl:24px pr:24px">
       <div>
         <p class="display my-custom-class fs:48px ls:-4px">
-          <span id="logo" class="mr:8px fs:1.25em val:-5px clr:gray"
+          <span component="logo" class="mr:8px fs:1.25em val:-5px clr:gray"
             >&empty;</span
           >nocss
         </p>
@@ -37,17 +37,23 @@
           Build websites just by writing HTML in an intuitive way with classes
           like
           <span class="code clr:blue">clr:blue, </span
-          ><span class="code bgc:blue clr:white">bgc:blue</span> and let us take
-          care of the CSS for you!
+          ><span class="code bgc:#0000ff clr:white">bgc:#0000ff</span> and let
+          us take care of the CSS for you!
         </p>
         <code
           class="code bgc:#eee fs:18px p:24px br:12px mb:24px d:inline-block"
           >$ npm install @syawais/nocss</code
         >
+        <p component="label" class="fs:10px ls:4px clr:gray tt:uppercase">
+          Buttons
+        </p>
         <div
-          id="btn"
-          class="w:100% lg:w:50% h:20vh br:20px bg:linear-gradient(to_left,#0000ff,#00ff00) mb:24px"
-        ></div>
+          component="btn"
+          class="yes-no d:inline-block p:24px br:20px bg:linear-gradient(to_left,#0000ff,#00ff00) hover:bg:#000 clr:#fff mb:24px"
+        >
+          Button
+        </div>
+        <p ref="label">Code</p>
         <code class="code d:block bgc:black br:12px p:24px mb:24px clr:white"
           >&lt;h1&gt;This is so cool&lt;/h1&gt;</code
         >
@@ -74,8 +80,8 @@
           </div>
         </div>
       </div>
-      <div ref="btn" class="d:flex ai:center jc:center clr:#fff br:1000px">
-        I'm referencing the gradient box with overridden border radius!
+      <div ref="btn" class="br:1000px">
+        I'm referencing the Button component above!
       </div>
     </main>
     <footer></footer>
