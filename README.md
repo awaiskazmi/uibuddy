@@ -28,7 +28,7 @@ Build websites just by writing HTML in an intuitive way and let us take care of 
 
 #### Components
 
-**nocss** also provides you a very simple and easy-to-use interface to build re-usable components, which you can use across multiple HTML files. Not only this, any changes made to the master component will automatically be translated to all its instances across the entire project making! All within a split-second!
+**nocss** also provides you a very simple and easy-to-use interface to build re-usable components, which you can use across multiple HTML files. Not only this, any changes made to the master component will automatically be translated to all its instances across the entire project. All within a split-second!
 
 ## Examples
 
