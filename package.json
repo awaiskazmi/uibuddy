@@ -2,7 +2,7 @@
   "name": "@syawais/nocss",
   "version": "1.0.0",
   "description": "Never write CSS again!",
-  "main": "nocss.js",
+  "main": "index.js",
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^10.2.5",
@@ -18,7 +18,7 @@
     "postcss-discard-duplicates": "^5.0.0"
   },
   "scripts": {
-    "nocss": "node nocss.js"
+    "nocss": "node index.js"
   },
   "keywords": [],
   "author": "Awais Kazmi",

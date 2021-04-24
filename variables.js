@@ -1,5 +1,10 @@
 var exports = (module.exports = {});
 
+// property:value
+// media:property:value
+// state:property:value
+// state:media:property:value
+
 // VARIABLES
 
 // BREAKPOINTS
