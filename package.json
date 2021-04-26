@@ -18,7 +18,8 @@
     "postcss-discard-duplicates": "^5.0.0"
   },
   "scripts": {
-    "nocss": "node index.js"
+    "nocss": "node index.js",
+    "build": "node build.js"
   },
   "keywords": [],
   "author": "Awais Kazmi",

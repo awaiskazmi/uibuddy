@@ -1,88 +1,67 @@
 <!DOCTYPE html>
-<html lang="en" class="m:0">
+<html lang="en" class="m:0 background:#fafafa">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>&empty; nocss - CSS Framework</title>
+    <title>
+      nocss - Build fully functional design systems without writing a single
+      line of CSS.
+    </title>
+    <link rel="shortcut icon" href="favicon.png" />
     <style>
       * {
         box-sizing: border-box;
       }
       .code {
-        font-family: "Sometype Mono", monospace;
+        font-family: "SF Mono", monospace;
       }
     </style>
     <link rel="stylesheet" href="./style.min.css" />
   </head>
   <body class="m:0 ff:Styrene_A,sans-serif">
-    <header>
+    <header class="background:#fff">
       <nav class="bbs:solid bbw:1px bbc:#dddddd p:24px">
-        <a class="td:none clr:#777 hover:clr:#111" href="/documentation.html"
+        <a class="td:none clr:#777 hover:clr:#111" href="/components.html"
+          >Components</a
+        >
+        <a
+          class="td:none clr:#777 hover:clr:#111 ml:24px"
+          href="/components.html"
           >Documentation</a
         >
       </nav>
     </header>
-    <main class="pl:24px pr:24px">
-      <div>
-        <p class="display my-custom-class fs:48px ls:-4px">
-          <span component="logo" class="mr:8px fs:1.25em val:-5px clr:gray"
+    <main>
+      <div
+        component="container"
+        class="pl:24px pr:24px maxWidth:1140px margin:0_auto"
+      >
+        <p class="display my-custom-class fs:32px ls:-1px">
+          <span component="logo" class="mr:8px fs:1.25em val:-3px clr:gray"
             >&empty;</span
           >nocss
         </p>
-        <h1 class="fs:72px fw:bold clr:black m:0">Never write CSS again!</h1>
-        <p class="fs:28px clr:#555">
-          Build websites just by writing HTML in an intuitive way with classes
-          like
-          <span class="code clr:blue">clr:blue, </span
-          ><span class="code bgc:#0000ff clr:white">bgc:#0000ff</span> and let
-          us take care of the CSS for you!
+        <h1 class="fs:32px md:fs:54px lh:38px md:lh:64px md:ls:-3px">
+          Build fully functional design systems without writing a single line of
+          CSS.
+        </h1>
+        <p
+          class="fs:16px md:fs:24px lh:24px md:lh:36px clr:#777 md:mb:36px md:maxw:90%"
+        >
+          Write HTML intuitively with classes like
+          <span class="color:#000 fontWeight:700 code">color:red</span>,
+          <span class="color:#000 fontWeight:700 code">textAlign:center</span>
+          and <span class="color:#000 fontWeight:700 code">display:flex</span>
+          to build any design directly in your markup, while we generate the
+          required CSS for you, at runtime!
         </p>
         <code
-          class="code bgc:#eee fs:18px p:24px br:12px mb:24px d:inline-block"
-          >$ npm install @syawais/nocss</code
+          class="code bgc:#ddd fs:14px md:fs:18px p:24px br:12px mb:48px d:inline-block"
+          >git clone https://github.com/awaiskazmi/nocss.git</code
         >
-        <p component="label" class="fs:10px ls:4px clr:gray tt:uppercase">
-          Buttons
-        </p>
-        <div
-          component="btn"
-          class="cur:pointer d:inline-block p:24px br:20px bg:linear-gradient(to_left,#0000ff,#ff0000) hover:bg:linear-gradient(to_left,#ff0000,#0000ff) clr:#fff mb:24px"
-        >
-          Button
-        </div>
-        <p ref="label">Code</p>
-        <code class="code d:block bgc:black br:12px p:24px mb:24px clr:white"
-          >&lt;h1&gt;This is so cool&lt;/h1&gt;</code
-        >
-        <div class="d:flex fd:column lg:fd:row mb:24px">
-          <div
-            class="fl:1 b:2px_solid_#000 br:20px bxs:0_4px_30px_rgba(0,0,0,0.2)"
-          >
-            <p class="p:24px lh:28px m:0">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut
-              pariatur explicabo illum repellendus aspernatur delectus et harum
-              quo recusandae iure quae natus velit nostrum ipsum, molestiae nemo
-              voluptatem cupiditate quod dolores. Distinctio, aspernatur eveniet
-              hic facilis ex, saepe esse voluptas, ducimus odit perspiciatis ab
-              ipsum. Expedita asperiores provident architecto libero.
-            </p>
-          </div>
-          <div
-            class="fl:1 d:none lg:d:block pl:24px pr:24px hover:lg:fs:24px hover:lg:clr:#0000ff"
-          >
-            <h3>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
-              veniam nesciunt at, accusamus aut et?
-            </h3>
-          </div>
-        </div>
-      </div>
-      <div ref="btn" class="br:1000px">
-        I'm referencing the Button component aboves!
       </div>
     </main>
     <footer></footer>
-    <script src="./app.min.js"></script>
   </body>
 </html>

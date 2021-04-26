@@ -3,3 +3,5 @@ tmp/
 app.min.js
 style.min.css
 *.bkp
+*.html
+*.css
