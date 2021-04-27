@@ -1,6 +1,6 @@
 {
   "name": "@dcodestudios/nocss",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Never write CSS again!",
   "main": "app.js",
   "dependencies": {
