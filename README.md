@@ -1,20 +1,26 @@
 # &empty; nocss
 
-#### Write CSS without writing CSS!
+#### Never write CSS again!
 
-Build websites just by writing HTML in an intuitive way and let us take care of the CSS for you!
+Build fully functional design systems without writing a single line of CSS.
 
 ## Installation
 
-#### Install the npm package
+#### Install the npm package:
 
-`npm i @syawais/nocss`
+```javascript
+npm i @dcodestudios/nocss
+```
 
-#### Create a nocss.js file in the root of your project directory and paste the following lines of code
+#### Create a nocss.js file in the root of your project directory and paste the following lines of code:
 
 ```javascript
 const chokidar = require("chokidar");
-const nocss = require("./index.js");
+const nocss = require("@dcodestudios/nocss");
+
+module.exports.build = function() {
+  nocss();
+};
 
 module.exports.watch = function() {
   chokidar
@@ -25,7 +31,14 @@ module.exports.watch = function() {
 };
 ```
 
-#### Run the project
+#### In your package.json file, add the following scripts:
+
+```javascript
+"build": "run-func nocss.js build",
+"watch": "run-func nocss.js watch"
+```
+
+#### Run the project:
 
 `npm run watch`
 
