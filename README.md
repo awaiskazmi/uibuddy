@@ -9,14 +9,14 @@ Build fully functional design systems without writing a single line of CSS.
 #### Install the npm package:
 
 ```javascript
-npm i @dcodestudios/nocss
+npm i @awaiskazmi/nocss
 ```
 
 #### Create a nocss.js file in the root of your project directory and paste the following lines of code:
 
 ```javascript
 const chokidar = require("chokidar");
-const nocss = require("@dcodestudios/nocss");
+const nocss = require("@awaiskazmi/nocss");
 
 module.exports.build = function() {
   nocss();
@@ -38,7 +38,7 @@ module.exports.watch = function() {
 "watch": "run-func nocss.js watch"
 ```
 
-#### Run the project:
+#### Start the project by running the following command in terminal:
 
 ```javascript
 npm run watch
