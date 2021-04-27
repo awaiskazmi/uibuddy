@@ -6,17 +6,28 @@ Build websites just by writing HTML in an intuitive way and let us take care of 
 
 ## Installation
 
-#### Clone the GitHub Repository
+#### Install the npm package
 
-`git clone https://github.com/awaiskazmi/nocss`
+`npm i @syawais/nocss`
 
-#### Install the dependencies
+#### Create a nocss.js file in the root of your project directory and paste the following lines of code
 
-`npm i`
+```javascript
+const chokidar = require("chokidar");
+const nocss = require("./index.js");
+
+module.exports.watch = function() {
+  chokidar
+    .watch("*.html", { persistent: true, ignoreInitial: true })
+    .on("all", (event, filePath) => {
+      nocss();
+    });
+};
+```
 
 #### Run the project
 
-`npm run nocss`
+`npm run watch`
 
 ## What is nocss?
 

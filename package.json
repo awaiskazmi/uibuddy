@@ -2,9 +2,8 @@
   "name": "@syawais/nocss",
   "version": "1.0.0",
   "description": "Never write CSS again!",
-  "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {
+  "main": "app.js",
+  "dependencies": {
     "autoprefixer": "^10.2.5",
     "chokidar": "^3.5.1",
     "concat": "^1.0.3",
@@ -15,11 +14,13 @@
     "mkdirp": "^1.0.4",
     "postcss": "^8.2.10",
     "postcss-combine-duplicated-selectors": "^10.0.2",
-    "postcss-discard-duplicates": "^5.0.0"
+    "postcss-discard-duplicates": "^5.0.0",
+    "run-func": "^1.0.5"
   },
+  "devDependencies": {},
   "scripts": {
-    "nocss": "node index.js",
-    "build": "node build.js"
+    "build": "run-func nocss.js build",
+    "watch": "run-func nocss.js watch"
   },
   "keywords": [],
   "author": "Awais Kazmi",
