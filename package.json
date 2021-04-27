@@ -3,8 +3,7 @@
   "version": "1.0.2",
   "description": "Build fully functional design systems without writing a single line of CSS.",
   "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "autoprefixer": "^10.2.5",
     "concat": "^1.0.3",
     "css-mqpacker": "^7.0.0",
@@ -19,6 +18,7 @@
     "postcss-discard-duplicates": "^5.0.0",
     "through2": "^4.0.2"
   },
+  "devDependencies": {},
   "scripts": {
     "nocss": "gulp nocss",
     "watch": "gulp watch"
