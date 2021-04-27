@@ -1,6 +1,6 @@
 {
   "name": "@syawais/nocss",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Build fully functional design systems without writing a single line of CSS.",
   "main": "index.js",
   "dependencies": {
