@@ -1,5 +1,5 @@
 {
-  "name": "@dcodestudios/nocss",
+  "name": "@awaiskazmi/nocss",
   "version": "1.0.5",
   "description": "Never write CSS again!",
   "main": "app.js",

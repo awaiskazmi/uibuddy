@@ -40,7 +40,9 @@ module.exports.watch = function() {
 
 #### Run the project:
 
-`npm run watch`
+```javascript
+npm run watch
+```
 
 ## What is nocss?
 
