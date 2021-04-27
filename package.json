@@ -1,6 +1,6 @@
 {
   "name": "@awaiskazmi/nocss",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Never write CSS again!",
   "main": "app.js",
   "dependencies": {
