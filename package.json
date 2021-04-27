@@ -1,25 +1,27 @@
 {
   "name": "@syawais/nocss",
   "version": "1.0.0",
-  "description": "Never write CSS again!",
+  "description": "Build fully functional design systems without writing a single line of CSS.",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^10.2.5",
-    "chokidar": "^3.5.1",
     "concat": "^1.0.3",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^5.0.1",
     "glob": "^7.1.6",
+    "gulp": "^4.0.2",
+    "gulp-dest": "^0.2.3",
+    "gulp-util": "^3.0.8",
     "jsdom": "^16.5.3",
-    "mkdirp": "^1.0.4",
     "postcss": "^8.2.10",
     "postcss-combine-duplicated-selectors": "^10.0.2",
-    "postcss-discard-duplicates": "^5.0.0"
+    "postcss-discard-duplicates": "^5.0.0",
+    "through2": "^4.0.2"
   },
   "scripts": {
-    "nocss": "node index.js",
-    "build": "node build.js"
+    "nocss": "gulp nocss",
+    "watch": "gulp watch"
   },
   "keywords": [],
   "author": "Awais Kazmi",
