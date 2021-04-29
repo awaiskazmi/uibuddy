@@ -1,28 +1,30 @@
-# &empty; nocss
+# &empty; NoCSS
 
-#### Never write CSS again!
+Build fully functional design systems, web pages, and custom user interfaces without writing CSS.
 
-Build fully functional design systems without writing a single line of CSS.
+## Documentation
+
+For full documentation, visit [dcodestudios.com/nocss](http://dcodestudios.com/nocss).
 
 ## Installation
 
-#### Install the npm package:
+Install the npm package:
 
 ```javascript
-npm i @awaiskazmi/nocss
+npm i @dcodestudios/nocss
 ```
 
-#### Create a nocss.js file in the root of your project directory and paste the following lines of code:
+Create a nocss.js file in the root of your project directory and paste the code below:
 
 ```javascript
 const chokidar = require("chokidar");
-const nocss = require("@awaiskazmi/nocss");
+const nocss = require("@dcodestudios/nocss");
 
-module.exports.build = function() {
+module.exports.build = function () {
   nocss();
 };
 
-module.exports.watch = function() {
+module.exports.watch = function () {
   chokidar
     .watch("*.html", { persistent: true, ignoreInitial: true })
     .on("all", (event, filePath) => {
@@ -31,45 +33,19 @@ module.exports.watch = function() {
 };
 ```
 
-#### In your package.json file, add the following scripts:
+In your package.json file, add the following scripts:
 
 ```javascript
 "build": "run-func nocss.js build",
 "watch": "run-func nocss.js watch"
 ```
 
-#### Start the project by running the following command in terminal:
+Start the project by running:
 
 ```javascript
 npm run watch
 ```
 
-## What is nocss?
+## Contributing
 
-**nocss** monitors your html files, watches for any changes, and generates css automatically based on the classes that you give to your elements, making this the first ever framework of its kind!
-
-#### Properties, Media Queries, and Pseudo-Classes!
-
-**nocss** supports all css properties, along with the addition of media queries and pseudo-classes making it extremely powerful, giving you the freedom to design absolutely anything!
-
-#### Components
-
-**nocss** also provides you a very simple and easy-to-use interface to build re-usable components, which you can use across multiple HTML files. Not only this, any changes made to the master component will automatically be translated to all its instances across the entire project. All within a split-second!
-
-## Examples
-
-#### 12px font size, red color
-
-`<div class="fs:12px clr:#ff0000"></div>`
-
-#### Bold font weight, 4px letter spacing
-
-`<div class="fw:bold ls:4px"></div>`
-
-#### Responsive border radius
-
-`<div class="br:4px md:br:16px"></div>`
-
-#### Button with hover state
-
-`<div class="d:inline-block p:24px bgc:#000 clr:#fff hover:bgc:#ddd hover:clr:#000">Button/div>`
+If you're interested in contributing to NoCSS, please send us an email at [devs.awais@gmail.com](mailto:devs.awais@gmail.com) before submitting a pull request.

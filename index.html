@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>
-      nocss - Build fully functional design systems without writing a single
-      line of CSS.
+      NoCSS - Build fully functional design systems, web pages, and custom user
+      interfaces without writing CSS.
     </title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="shortcut icon" href="favicon.png" />
     <style>
       * {
@@ -19,7 +24,7 @@
     </style>
     <link rel="stylesheet" href="./style.min.css" />
   </head>
-  <body class="m:0 ff:Styrene_A,sans-serif">
+  <body class="m:0 ff:Inter,sans-serif">
     <header class="background:#fff">
       <nav class="bbs:solid bbw:1px bbc:#dddddd p:24px">
         <a class="td:none clr:#777 hover:clr:#111" href="/components.html"
@@ -40,26 +45,42 @@
         <p class="display my-custom-class fs:32px ls:-1px">
           <span component="logo" class="mr:8px fs:1.25em val:-3px clr:gray"
             >&empty;</span
-          >nocss
+          >NoCSS
         </p>
-        <h1 class="fs:32px md:fs:54px lh:38px md:lh:64px md:ls:-3px">
-          Build fully functional design systems without writing a single line of
-          CSS.
+        <h1 class="fs:24px md:fs:54px lh:30px md:lh:70px md:ls:-2px">
+          Build any design without writing CSS.<br /><span
+            class="d:inline-block mt:12px md:mt:0 fs:54px md:fs:100px fw:900"
+            >Seriously.</span
+          >
         </h1>
         <p
-          class="fs:16px md:fs:24px lh:24px md:lh:36px clr:#777 md:mb:36px md:maxw:90%"
+          class="fs:16px md:fs:24px lh:24px md:lh:36px clr:#777 md:mb:36px md:maxw:80%"
         >
           Write HTML intuitively with classes like
           <span class="color:#000 fontWeight:700 code">color:red</span>,
           <span class="color:#000 fontWeight:700 code">textAlign:center</span>
           and <span class="color:#000 fontWeight:700 code">display:flex</span>
-          to build any design directly in your markup, while we generate the
-          required CSS for you, at runtime!
+          to build any design directly in your markup, and we take care of the
+          CSS for you!
         </p>
         <code
-          class="code bgc:#ddd fs:14px md:fs:18px p:24px br:12px mb:48px d:inline-block"
-          >git clone https://github.com/awaiskazmi/nocss.git</code
+          class="code bgc:#eee fs:14px md:fs:18px p:24px br:12px mb:48px d:inline-block"
+          >npm install @dcodestudios/nocss</code
         >
+      </div>
+      <div class="component-container d:none">
+        <iframe
+          src="https://codesandbox.io/embed/new?codemirror=1"
+          style="
+            width: 100%;
+            height: 500px;
+            border: 0;
+            border-radius: 4px;
+            overflow: hidden;
+          "
+          allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+          sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+        ></iframe>
       </div>
     </main>
     <footer></footer>

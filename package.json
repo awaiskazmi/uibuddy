@@ -1,8 +1,14 @@
 {
-  "name": "@awaiskazmi/nocss",
+  "name": "@dcodestudios/nocss",
   "version": "1.0.7",
-  "description": "Never write CSS again!",
+  "description": "Build fully functional design systems, web pages, and custom user interfaces without writing CSS.",
   "main": "app.js",
+  "repository": "https://github.com/awaiskazmi/nocss.git",
+  "homepage": "https://dcodestudios.com/nocss",
+  "contributors": [
+    "Awais Kazmi <devs.awais@gmail.com>",
+    "Haleem Ul Hassan <jonathan@reinink.ca>"
+  ],
   "dependencies": {
     "autoprefixer": "^10.2.5",
     "chokidar": "^3.5.1",
