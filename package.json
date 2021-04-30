@@ -1,6 +1,6 @@
 {
   "name": "@dcodestudios/nocss",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Build fully functional design systems, web pages, and custom user interfaces without writing CSS.",
   "main": "app.js",
   "repository": "https://github.com/awaiskazmi/nocss.git",
