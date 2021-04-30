@@ -1,0 +1,42 @@
+doctype html
+html(lang='en' class='m:0 background:#fafafa')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible' content='ie=edge')
+    title
+      | nocss - Build fully functional design systems without writing a single
+      | line of CSS.
+    link(rel='shortcut icon' href='favicon.png')
+    style.
+      * {
+      box-sizing: border-box;
+      }
+      .code {
+      font-family: "SF Mono", monospace;
+      }
+    link(rel='stylesheet' href='../style.min.css')
+  body(class='m:0 ff:Styrene_A,sans-serif')
+    header(class='background:#fff')
+      nav(class='bbs:solid bbw:1px bbc:#dddddd p:24px')
+        a(class='td:none clr:#777 hover:clr:#111' href='/components.html') Components
+        a(class='td:none clr:#777 hover:clr:#111 ml:24px' href='/components.html') Documentation
+    main(component='container' class='pl:24px pr:24px maxWidth:1140px margin:0_auto')
+        p.display.my-custom-class(class='fs:32px ls:-1px')
+          span(component='logo' class='mr:8px fs:1.25em val:-3px clr:gray') ∅
+          | nocss
+        h1(class='fs:32px md:fs:54px lh:38px md:lh:64px md:ls:-3px')
+          | Build fully functional design systems without writing a single line of
+          | CSS.
+        p(class='fs:16px md:fs:24px lh:24px md:lh:36px clr:#777 md:mb:36px md:maxw:90%')
+          | Write HTML intuitively with classes like
+          span.code(class='color:#000 fontWeight:700') color:red
+          | ,
+          span.code(class='color:#000 fontWeight:700') textAlign:center
+          |           and 
+          span.code(class='color:#000 fontWeight:700') display:flex
+          |           to build any design directly in your markup, while we generate the
+          |           required CSS for you, at runtime!
+        code.code(class='bgc:#ddd fs:14px md:fs:18px p:24px br:12px mb:48px d:inline-block') git clone https://github.com/awaiskazmi/nocss.git
+        include includes/button.pug
+    include includes/footer.pug

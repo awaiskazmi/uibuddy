@@ -1,4 +1,4 @@
-# &empty; NoCSS (Gulp plugin)
+# &empty; NoCSS (Gulp plugin integration with PUG)
 
 Build fully functional design systems, web pages, and custom user interfaces without writing CSS.
 
@@ -25,10 +25,13 @@ const combine = require("postcss-combine-duplicated-selectors");
 const duplicate = require("postcss-discard-duplicates");
 const autoprefixer = require("autoprefixer");
 const mqpacker = require("css-mqpacker");
+const pug = require("gulp-pug-3");
 
 const build = function () {
   const plugins = [combine(), duplicate(), autoprefixer(), mqpacker()];
-  return src("./*.html")
+  return src("./pug/*.pug")
+    .pipe(pug())
+    .pipe(dest("./dist/"))
     .pipe(nocss())
     .pipe(concat("style.min.css"))
     .pipe(postcss(plugins))
@@ -39,7 +42,7 @@ build.displayName = "nocss";
 task(build);
 
 function watcher() {
-  watch("./*.html", build);
+  watch("./pug/**/*.pug", build);
 }
 watcher.displayName = "watch";
 

@@ -27,5 +27,8 @@
   },
   "keywords": [],
   "author": "Awais Kazmi",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-pug-3": "^1.2.2"
+  }
 }
