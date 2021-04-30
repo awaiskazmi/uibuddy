@@ -1,13 +1,13 @@
 {
   "name": "@dcodestudios/nocss",
   "version": "1.0.10",
-  "description": "Build fully functional design systems, web pages, and custom user interfaces without writing CSS.",
-  "main": "app.js",
+  "description": "Build design systems, web pages, and custom user interfaces without writing CSS.",
+  "main": "nocss.js",
   "repository": "https://github.com/awaiskazmi/nocss.git",
   "homepage": "https://dcodestudios.com/nocss",
   "contributors": [
     "Awais Kazmi <devs.awais@gmail.com>",
-    "Haleem Ul Hassan <jonathan@reinink.ca>"
+    "Haleem Ul Hassan <haleemulhasan@hotmail.com>"
   ],
   "dependencies": {
     "autoprefixer": "^10.2.5",

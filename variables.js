@@ -41,6 +41,10 @@ exports.color = "color";
 exports.d = "display";
 exports.display = "display";
 
+// VISIBILITY
+exports.v = "visibility";
+exports.visibility = "visibility";
+
 // FLEXBOX UTILITIES
 exports.ai = "align-items";
 exports.alignItems = "align-items";
@@ -129,6 +133,10 @@ exports.tal = "text-align";
 exports.textAlign = "text-align";
 exports.tt = "text-transform";
 exports.textTransform = "text-transform";
+exports.ts = "text-shadow";
+exports.textShadow = "text-shadow";
+exports.ws = "white-space";
+exports.whiteSpace = "white-space";
 
 // CURSOR
 exports.cur = "cursor";

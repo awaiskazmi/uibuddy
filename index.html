@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" class="m:0 background:#fafafa">
+<html lang="en" class="m:0 background:#fafafa fs:16px md:fs:18px">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>
-      NoCSS - Build fully functional design systems, web pages, and custom user
-      interfaces without writing CSS.
+      NoCSS - Build design systems, web pages, and custom user interfaces
+      without writing CSS.
     </title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="shortcut icon" href="favicon.png" />
@@ -18,70 +22,249 @@
       * {
         box-sizing: border-box;
       }
-      .code {
-        font-family: "SF Mono", monospace;
-      }
     </style>
     <link rel="stylesheet" href="./style.min.css" />
   </head>
   <body class="m:0 ff:Inter,sans-serif">
-    <header class="background:#fff">
-      <nav class="bbs:solid bbw:1px bbc:#dddddd p:24px">
-        <a class="td:none clr:#777 hover:clr:#111" href="/components.html"
-          >Components</a
-        >
-        <a
-          class="td:none clr:#777 hover:clr:#111 ml:24px"
-          href="/components.html"
-          >Documentation</a
-        >
-      </nav>
-    </header>
     <main>
-      <div
-        component="container"
-        class="pl:24px pr:24px maxWidth:1140px margin:0_auto"
-      >
-        <p class="display my-custom-class fs:32px ls:-1px">
-          <span component="logo" class="mr:8px fs:1.25em val:-3px clr:gray"
-            >&empty;</span
-          >NoCSS
-        </p>
-        <h1 class="fs:24px md:fs:54px lh:30px md:lh:70px md:ls:-2px">
-          Build any design without writing CSS.<br /><span
-            class="d:inline-block mt:12px md:mt:0 fs:54px md:fs:100px fw:900"
-            >Seriously.</span
+      <section id="intro">
+        <div
+          component="container"
+          class="pl:24px pr:24px maxWidth:1140px margin:0_auto"
+        >
+          <p class="display my-custom-class fs:32px ls:-1px">
+            <span component="logo" class="mr:12px fs:1.25em val:-5px clr:gray"
+              ><img src="./logo.png" height="32" /></span
+            >NoCSS
+          </p>
+          <h1
+            component="h1"
+            class="fs:28px md:fs:72px fw:900 lh:30px md:lh:70px md:ls:-2px"
           >
-        </h1>
-        <p
-          class="fs:16px md:fs:24px lh:24px md:lh:36px clr:#777 md:mb:36px md:maxw:80%"
-        >
-          Write HTML intuitively with classes like
-          <span class="color:#000 fontWeight:700 code">color:red</span>,
-          <span class="color:#000 fontWeight:700 code">textAlign:center</span>
-          and <span class="color:#000 fontWeight:700 code">display:flex</span>
-          to build any design directly in your markup, and we take care of the
-          CSS for you!
-        </p>
-        <code
-          class="code bgc:#eee fs:14px md:fs:18px p:24px br:12px mb:48px d:inline-block"
-          >npm install @dcodestudios/nocss</code
-        >
-      </div>
-      <div class="component-container d:none">
-        <iframe
-          src="https://codesandbox.io/embed/new?codemirror=1"
-          style="
-            width: 100%;
-            height: 500px;
-            border: 0;
-            border-radius: 4px;
-            overflow: hidden;
-          "
-          allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-          sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-        ></iframe>
-      </div>
+            Build any design,<br />without writing CSS.
+          </h1>
+          <p
+            component="para"
+            class="md:fs:24px lh:24px md:lh:36px clr:#333 mb:24px md:mb:36px md:maxw:80%"
+          >
+            Write HTML intuitively with classes like
+            <span
+              component="inline-code"
+              class="color:#000 fontWeight:700 ff:JetBrains_Mono"
+              >color:red</span
+            >,
+            <span class="inline-code">textAlign:center</span>
+            and <span class="inline-code">display:flex</span>
+            to build any design directly in your markup, while we take care of
+            the CSS for you!
+          </p>
+          <code
+            component="full-code"
+            class="ff:JetBrains_Mono bgc:#eee fs:14px md:fs:18px p:16px md:p:24px br:12px mb:48px d:inline-block w:100% md:w:auto ws:nowrap ovx:auto ovy:hidden"
+            >npm install @dcodestudios/nocss</code
+          >
+        </div>
+      </section>
+      <section id="statement">
+        <div class="container p:20px">
+          <h2
+            component="h2"
+            class="fs:24px md:fs:54px md:lh:60px fw:900 mb:1rem ls:-1px md:ls:-2px"
+          >
+            Insanely Fast and Furious!
+          </h2>
+          <blockquote class="para m:0">
+            I was forever looking for ways to make CSS scalable without having
+            to go through a build process over and over again, and with minimal
+            back-and-forth movement between files. With NoCSS, you can just add
+            your rules on the fly, making the development process extremely
+            scalable, ridiculously fast, and most importantly, enjoyable :)
+          </blockquote>
+          <p class="mt:2rem">
+            <img
+              class="borderRadius:100% boxShadow:0_0_0_4px_#fff,0_0_0_5px_#777"
+              src="./awaiskazmi.jfif"
+              height="48"
+            />
+            <span class="d:block mt:.5rem">Awais Kazmi</span>
+            <span class="d:block color:#777 mt:.25rem">Creator of nocss</span>
+          </p>
+        </div>
+      </section>
+      <section
+        id="speed"
+        component="section-wrapper"
+        class="m:48px_0 md:m:72px_0"
+      >
+        <div class="container">
+          <p
+            component="subtitle"
+            class="fs:10px md:fs:16px color:#777 ls:1px tt:uppercase mb:8px md:mb:12px"
+          >
+            Speed
+          </p>
+          <p class="h2 m:0">Build as you go.</p>
+          <p class="para">
+            Need to add 24px font size to an element? Simply give it the class
+            <code class="inline-code">fs:24px</code> and you're done! Try giving
+            it a class of <code class="inline-code">color:red</code> to change
+            its color.
+          </p>
+          <p class="para">
+            <a component="link" href="#" class="fw:500 color:#2980b9"
+              >Learn more</a
+            >
+          </p>
+          <p>Example:</p>
+          <code class="full-code"
+            >&lt;h1 class="<span class="inline-code">fs:24px color:red</span
+            >"&gt;&lt;h1/&gt;</code
+          >
+        </div>
+      </section>
+      <section id="properties" class="section-wrapper">
+        <div class="container">
+          <p class="subtitle">No Constraints</p>
+          <p class="h2 m:0">The entire CSS universe,<br />at your disposal</p>
+          <p class="para">
+            (Almost) All the CSS properties are supported, including and not
+            limited to modifying an element's display, colors, spacing,
+            typography, shadows, and everything else that you require to design
+            your awesome looking design.
+          </p>
+          <p class="para">
+            <a href="#" class="link">Learn more</a>
+          </p>
+          <p>Example:</p>
+          <code class="full-code"
+            >&lt;div class="<span class="inline-code">d:flex p:24px</span
+            >"&gt;&lt;div/&gt;</code
+          >
+        </div>
+      </section>
+      <section id="light" class="section-wrapper">
+        <div class="container">
+          <p class="subtitle">Performance</p>
+          <p class="h2 m:0">It's tiny af.</p>
+          <p class="para">
+            NoCSS only generates CSS from the rules defined in your markup,
+            which means your final bundle will never have any extra code that
+            you're never going to use, which ususally comes with other
+            frameworks.
+          </p>
+        </div>
+      </section>
+      <section id="responsive" class="section-wrapper">
+        <div class="container">
+          <p class="subtitle">Mobile-First</p>
+          <p class="h2 m:0">Everything is Responsive.</p>
+          <p class="para">
+            Writing and managing complex media queries is no fun at all. NoCSS
+            allows you to build responsive designs right in your HTML instead.
+          </p>
+          <p class="para">
+            Just add a screen size in front of any class and watch it magically
+            apply at a specific breakpoint.
+          </p>
+          <p class="para">
+            <a href="#" class="link">Learn more</a>
+          </p>
+          <p>Example:</p>
+          <code class="full-code"
+            >&lt;div class="<span class="inline-code">fs:14px md:fs:24px</span
+            >"&gt;&lt;div/&gt;</code
+          >
+        </div>
+      </section>
+      <section id="states" class="section-wrapper">
+        <div class="container">
+          <p class="subtitle">States</p>
+          <p class="h2 m:0">Hover, focus, and active states also covered.</p>
+          <p class="para">
+            Simply prepend any of the states mentioned above before any class to
+            add state-based styles an element.
+          </p>
+          <p class="para">
+            <a href="#" class="link">Learn more</a>
+          </p>
+          <p>Example:</p>
+          <code class="full-code"
+            >&lt;p class="<span class="inline-code"
+              >color:red hover:color:blue</span
+            >"&gt;&lt;p/&gt;</code
+          >
+        </div>
+      </section>
+      <section id="responsiveStates" class="section-wrapper">
+        <div class="container">
+          <p class="subtitle">Responsive States</p>
+          <p class="h2 m:0">
+            You can add responsive state-based styles just as easily!
+          </p>
+          <p class="para">
+            If somehow you want to add different hover effects for different
+            screen sizes, you have the power to do so as well.
+          </p>
+          <p class="para">
+            <a href="#" class="link">Learn more</a>
+          </p>
+          <p>Example:</p>
+          <code class="full-code"
+            >&lt;p class="<span class="inline-code"
+              >hover:color:red hover:md:color:blue</span
+            >"&gt;&lt;p/&gt;</code
+          >
+        </div>
+      </section>
+      <section id="both" class="section-wrapper">
+        <div class="container">
+          <p class="subtitle">Components</p>
+          <p class="h2 m:0">Duplication? Way ahead of you :)</p>
+          <p class="para">
+            If you're repeating the same utilities over and over again, simply
+            add a
+            <code class="inline-code">componet</code> attribute and boom &mdash;
+            you've got a single source of truth so you can make changes in one
+            place.
+          </p>
+          <p class="para">
+            <a href="#" class="link">Learn more</a>
+          </p>
+          <p>Example:</p>
+          <code class="full-code mb:1rem"
+            >&lt;div
+            <span class="inline-code">component="button"</span> class="p:24px
+            fs:14px"&gt;&lt;div/&gt;</code
+          >
+          <p>Use the component's name as a class to declare an instance:</p>
+          <code class="full-code"
+            >&lt;div
+            <span class="inline-code">class="button"</span
+            >&gt;&lt;div/&gt;</code
+          >
+        </div>
+      </section>
+      <section id="overrides" class="section-wrapper">
+        <div class="container">
+          <p class="subtitle">Overrides</p>
+          <p class="h2 m:0">Want to override a component? You got it!</p>
+          <p class="para">
+            You can override all the properties of a component's instance if it
+            is absolutely necessary. This proves especially handy if you just
+            want to modify a single property and don't want to create an
+            entirely new component just for that one change.
+          </p>
+          <p class="para">
+            <a href="#" class="link">Learn more</a>
+          </p>
+          <p>Example:</p>
+          <code class="full-code"
+            >&lt;div class="button
+            <span class="inline-code"> borderRadius:100px</span
+            >"&gt;&lt;div/&gt;</code
+          >
+        </div>
+      </section>
     </main>
     <footer></footer>
   </body>
