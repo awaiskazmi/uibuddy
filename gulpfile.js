@@ -7,7 +7,7 @@ const duplicate = require("postcss-discard-duplicates");
 const autoprefixer = require("autoprefixer");
 const mqpacker = require("css-mqpacker");
 
-const build = function() {
+const build = function () {
   const plugins = [combine(), duplicate(), autoprefixer(), mqpacker()];
   return src("./*.html")
     .pipe(nocss())

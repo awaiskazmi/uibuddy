@@ -21,7 +21,6 @@
     "replace-ext": "^2.0.0",
     "through2": "^4.0.2"
   },
-  "devDependencies": {},
   "scripts": {
     "nocss": "gulp nocss",
     "watch": "gulp watch"

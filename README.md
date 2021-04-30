@@ -1,49 +1,64 @@
-# &empty; nocss
+# &empty; NoCSS (Gulp plugin)
 
-#### Write CSS without writing CSS!
+Build fully functional design systems, web pages, and custom user interfaces without writing CSS.
 
-Build websites just by writing HTML in an intuitive way and let us take care of the CSS for you!
+## Documentation
+
+For full documentation, visit [dcodestudios.com/nocss](http://dcodestudios.com/nocss).
 
 ## Installation
 
-#### Clone the GitHub Repository
+Install the npm package:
 
-`git clone https://github.com/awaiskazmi/nocss`
+```javascript
+npm i @dcodestudios/gulp-nocss
+```
 
-#### Install the dependencies
+Create a gulpfile.js file in the root of your project directory and paste the code below:
 
-`npm i`
+```javascript
+const { watch, src, dest, task } = require("gulp");
+const nocss = require("./index.js");
+const concat = require("gulp-concat");
+const postcss = require("gulp-postcss");
+const combine = require("postcss-combine-duplicated-selectors");
+const duplicate = require("postcss-discard-duplicates");
+const autoprefixer = require("autoprefixer");
+const mqpacker = require("css-mqpacker");
 
-#### Run the project
+const build = function () {
+  const plugins = [combine(), duplicate(), autoprefixer(), mqpacker()];
+  return src("./*.html")
+    .pipe(nocss())
+    .pipe(concat("style.min.css"))
+    .pipe(postcss(plugins))
+    .pipe(dest("./"));
+};
+build.displayName = "nocss";
 
-`npm run nocss`
+task(build);
 
-## What is nocss?
+function watcher() {
+  watch("./*.html", build);
+}
+watcher.displayName = "watch";
 
-**nocss** monitors your html files, watches for any changes, and generates css automatically based on the classes that you give to your elements, making this the first ever framework of its kind!
+task(watcher);
+```
 
-#### Properties, Media Queries, and Pseudo-Classes!
+In your package.json file, add the following scripts:
 
-**nocss** supports all css properties, along with the addition of media queries and pseudo-classes making it extremely powerful, giving you the freedom to design absolutely anything!
+```javascript
+"nocss": "gulp nocss",
+"watch": "gulp watch"
+```
 
-#### Components
+Start the project by running:
 
-**nocss** also provides you a very simple and easy-to-use interface to build re-usable components, which you can use across multiple HTML files. Not only this, any changes made to the master component will automatically be translated to all its instances across the entire project. All within a split-second!
+```javascript
+npm run watch
+```
 
-## Examples
+## Contributing
 
-#### 12px font size, red color
-
-`<div class="fs:12px clr:#ff0000"></div>`
-
-#### Bold font weight, 4px letter spacing
-
-`<div class="fw:bold ls:4px"></div>`
-
-#### Responsive border radius
-
-`<div class="br:4px md:br:16px"></div>`
-
-#### Button with hover state
-
-`<div class="d:inline-block p:24px bgc:#000 clr:#fff hover:bgc:#ddd hover:clr:#000">Button/div>`
+If you're interested in contributing to NoCSS, please send us an email at [devs.awais@gmail.com](mailto:devs.awais@gmail.com) before submitting a pull request.
