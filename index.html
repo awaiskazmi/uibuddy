@@ -34,7 +34,7 @@
         >
           <p class="display my-custom-class fs:32px ls:-1px">
             <span component="logo" class="mr:12px fs:1.25em val:-5px clr:gray"
-              ><img src="./logo.png" height="32" /></span
+              ><img src="./logo.png" height="32"/></span
             >NoCSS
           </p>
           <h1
@@ -63,7 +63,7 @@
             class="ff:JetBrains_Mono bgc:#eee fs:14px md:fs:18px p:16px md:p:24px br:12px mb:48px d:inline-block w:100% md:w:auto ws:nowrap ovx:auto ovy:hidden"
             >npm install @dcodestudios/nocss</code
           >
-          <p class="textAlign:left mt:-1rem">
+          <p class="para textAlign:left mt:-1rem">
             <a
               component="link"
               href="https://github.com/awaiskazmi/nocss"
@@ -75,19 +75,20 @@
         </div>
       </section>
       <section id="statement">
-        <div class="container p:20px">
+        <div class="container p:20px md:textAlign:center">
           <h2
             component="h2"
-            class="fs:24px md:fs:54px md:lh:60px fw:900 mb:1rem ls:-1px md:ls:-2px"
+            class="fs:24px md:fs:54px md:lh:60px fw:700 md:fw:900 mb:1rem ls:0px md:ls:-2px"
           >
             Insanely Fast and Furious!
           </h2>
-          <blockquote class="para m:0">
+          <blockquote class="para m:0_auto">
             I was forever looking for ways to make CSS scalable without having
             to go through a build process over and over again, and with minimal
             back-and-forth movement between files. With NoCSS, you can just add
-            your rules on the fly, making the development process extremely
-            scalable, ridiculously fast, and most importantly, enjoyable :)
+            your rules inside your HTML and build on the fly, making the
+            development process extremely scalable, ridiculously fast, and most
+            importantly, enjoyable :)
           </blockquote>
           <p class="mt:2rem">
             <img
@@ -96,7 +97,7 @@
               height="48"
             />
             <span class="d:block mt:.5rem">Awais Kazmi</span>
-            <span class="d:block color:#777 mt:.25rem">Creator of nocss</span>
+            <span class="d:block color:#777 mt:.25rem">Creator of NoCSS</span>
           </p>
         </div>
       </section>
@@ -114,10 +115,22 @@
           </p>
           <p class="h2 m:0">Build as you go.</p>
           <p class="para">
-            Need to add 24px font size to an element? Simply give it the class
-            <code class="inline-code">fs:24px</code> and you're done! Try giving
-            it a class of <code class="inline-code">color:red</code> to change
-            its color.
+            Need to add 24px font size to an element? Simply give it a class of
+            <code class="inline-code">fs:24px</code> and you're done! Giving it
+            a class of <code class="inline-code">color:red</code> to change its
+            color. Try playing aournd with
+            <code class="inline-code">letterSpacing</code>,
+            <code class="inline-code">lineHeight</code>, and
+            <code class="inline-code">fontWeight</code>.
+          </p>
+          <p class="para">
+            <a
+              component="link"
+              href="https://github.com/awaiskazmi/nocss"
+              target="_blank"
+              class="fw:500 color:#2980b9"
+              >Learn more</a
+            >
           </p>
           <p>Example:</p>
           <code class="full-code"
@@ -131,10 +144,19 @@
           <p class="subtitle">No Constraints</p>
           <p class="h2 m:0">The entire CSS universe,<br />at your disposal</p>
           <p class="para">
-            (Almost) All the CSS properties are supported, including and not
+            (Almost) All of the CSS properties are supported, including and not
             limited to modifying an element's display, colors, spacing,
-            typography, shadows, and everything else that you require to design
-            your awesome looking design.
+            typography, shadows, and everything else that is required to create
+            a pixel-perfect design.
+          </p>
+          <p class="para">
+            <a
+              component="link"
+              href="https://github.com/awaiskazmi/nocss"
+              target="_blank"
+              class="fw:500 color:#2980b9"
+              >Learn more</a
+            >
           </p>
           <p>Example:</p>
           <code class="full-code"
@@ -143,7 +165,7 @@
           >
         </div>
       </section>
-      <section id="light" class="section-wrapper">
+      <section id="light" class="section-wrapper mb:96px">
         <div class="container">
           <p class="subtitle">Performance</p>
           <p class="h2 m:0">It's tiny af.</p>
@@ -152,6 +174,15 @@
             which means your final bundle will never have any extra code that
             you're never going to use, which ususally comes with other
             frameworks.
+          </p>
+          <p class="para">
+            <a
+              component="link"
+              href="https://github.com/awaiskazmi/nocss"
+              target="_blank"
+              class="fw:500 color:#2980b9"
+              >Learn more</a
+            >
           </p>
         </div>
       </section>
@@ -167,6 +198,15 @@
             Just add a screen size in front of any class and watch it magically
             apply at a specific breakpoint.
           </p>
+          <p class="para">
+            <a
+              component="link"
+              href="https://github.com/awaiskazmi/nocss"
+              target="_blank"
+              class="fw:500 color:#2980b9"
+              >Learn more</a
+            >
+          </p>
           <p>Example:</p>
           <code class="full-code"
             >&lt;div class="<span class="inline-code">fs:14px md:fs:24px</span
@@ -179,8 +219,19 @@
           <p class="subtitle">States</p>
           <p class="h2 m:0">Hover, focus, and active states also covered.</p>
           <p class="para">
-            Simply prepend any of the states mentioned above before any class to
-            add state-based styles an element.
+            Want to style something on hover? Simply add
+            <code class="inline-code">hover:</code> (or <code>active:</code> or
+            <code>focus:</code>) before the class you want to add to give
+            state-based styles to your element! Sweet, isn't it?
+          </p>
+          <p class="para">
+            <a
+              component="link"
+              href="https://github.com/awaiskazmi/nocss"
+              target="_blank"
+              class="fw:500 color:#2980b9"
+              >Learn more</a
+            >
           </p>
           <p>Example:</p>
           <code class="full-code"
@@ -200,6 +251,15 @@
             If somehow you want to add different hover effects for different
             screen sizes, you have the power to do so as well.
           </p>
+          <p class="para">
+            <a
+              component="link"
+              href="https://github.com/awaiskazmi/nocss"
+              target="_blank"
+              class="fw:500 color:#2980b9"
+              >Learn more</a
+            >
+          </p>
           <p>Example:</p>
           <code class="full-code"
             >&lt;p class="<span class="inline-code"
@@ -215,9 +275,18 @@
           <p class="para">
             If you're repeating the same utilities over and over again, simply
             add a
-            <code class="inline-code">componet</code> attribute and boom &mdash;
-            you've got a single source of truth so you can make changes in one
-            place.
+            <code class="inline-code">component</code> attribute and boom
+            &mdash; you've got a single source of truth so you can make changes
+            in one place.
+          </p>
+          <p class="para">
+            <a
+              component="link"
+              href="https://github.com/awaiskazmi/nocss"
+              target="_blank"
+              class="fw:500 color:#2980b9"
+              >Learn more</a
+            >
           </p>
           <p>Example:</p>
           <code class="full-code mb:1rem"
@@ -225,7 +294,9 @@
             <span class="inline-code">component="button"</span> class="p:24px
             fs:14px"&gt;&lt;div/&gt;</code
           >
-          <p>Use the component's name as a class to declare an instance:</p>
+          <p>
+            Use the component's name as a class to create an instance:
+          </p>
           <code class="full-code"
             >&lt;div
             <span class="inline-code">class="button"</span
@@ -243,7 +314,24 @@
             want to modify a single property and don't want to create an
             entirely new component just for that one change.
           </p>
+          <p class="para">
+            <a
+              component="link"
+              href="https://github.com/awaiskazmi/nocss"
+              target="_blank"
+              class="fw:500 color:#2980b9"
+              >Learn more</a
+            >
+          </p>
           <p>Example:</p>
+          <code class="full-code mb:1rem"
+            >&lt;div
+            <span class="inline-code">component="button"</span> class="p:24px
+            fs:14px borderRadius:4px"&gt;&lt;div/&gt;</code
+          >
+          <p>
+            Create an instance of button and override border radius:
+          </p>
           <code class="full-code"
             >&lt;div class="button
             <span class="inline-code"> borderRadius:100px</span
@@ -251,7 +339,7 @@
           >
         </div>
       </section>
-      <section id="overrides" class="section-wrapper">
+      <section id="overrides" class="section-wrapper mb:96px">
         <div class="container">
           <p class="subtitle">Integration</p>
           <p class="h2 m:0">
@@ -262,6 +350,15 @@
             your development process, which gives you more control options such
             as specifying output directory paths, running PostCSS plugins and
             much more!
+          </p>
+          <p class="para mt:0">
+            <a
+              component="link"
+              href="https://github.com/awaiskazmi/nocss"
+              target="_blank"
+              class="fw:500 color:#2980b9"
+              >Learn more</a
+            >
           </p>
         </div>
       </section>

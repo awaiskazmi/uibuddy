@@ -8,10 +8,11 @@ var exports = (module.exports = {});
 // VARIABLES
 
 // BREAKPOINTS
-exports.sm = "240";
-exports.md = "768";
-exports.lg = "992";
-exports.xl = "1200";
+exports.xs = "0";
+exports.sm = "600";
+exports.md = "960";
+exports.lg = "1280";
+exports.xl = "1920";
 
 // STATES
 exports.hover = "hover";
@@ -29,11 +30,18 @@ exports.fw = "font-weight";
 exports.fontWeight = "font-weight";
 exports.fs = "font-size";
 exports.fontSize = "font-size";
+exports.fst = "font-style";
+exports.fontStyle = "font-style";
 
 // COLORS
 exports.bg = "background";
 exports.background = "background";
 exports.bgc = "background-color";
+exports.backgroundColor = "background-color";
+exports.bgi = "background-image";
+exports.backgroundImage = "background-image";
+exports.bgp = "background-position";
+exports.backgroundPosition = "background-position";
 exports.clr = "color";
 exports.color = "color";
 
@@ -48,6 +56,10 @@ exports.visibility = "visibility";
 // FLEXBOX UTILITIES
 exports.ai = "align-items";
 exports.alignItems = "align-items";
+exports.ac = "align-content";
+exports.alignContent = "align-content";
+exports.as = "align-self";
+exports.alignSelf = "align-self";
 exports.jc = "justify-content";
 exports.justifyContent = "justify-content";
 exports.fg = "flex-grow";
@@ -62,10 +74,19 @@ exports.flex = "flex";
 // GRID UTILITIES
 exports.gtc = "grid-template-columns";
 exports.gta = "grid-template-areas";
+exports.ga = "grid-area";
 
 // POSITION
 exports.pos = "position";
 exports.position = "position";
+exports.t = "top";
+exports.top = "top";
+exports.b = "bottom";
+exports.bottom = "bottom";
+exports.l = "left";
+exports.left = "left";
+exports.r = "right";
+exports.right = "right";
 
 // SIZING
 exports.col = "width";
@@ -103,7 +124,7 @@ exports.mb = "margin-bottom";
 exports.marginBottom = "margin-bottom";
 
 // BORDER
-exports.b = "border";
+exports.bor = "border";
 exports.border = "border";
 
 exports.bts = "border-top-style";
@@ -168,3 +189,25 @@ exports.verticalAlign = "vertical-align";
 
 // TRANSFORM
 exports.transform = "transform";
+
+// OPACITY
+exports.o = "opacity";
+exports.op = "opacity";
+exports.opacity = "opacity";
+
+// OUTLINE
+exports.out = "outline";
+exports.outline = "outline";
+
+// FILTER
+exports.f = "filter";
+exports.filter = "filter";
+
+// BLEND MODE
+exports.blend = "mix-blend-mode";
+exports.blendMode = "mix-blend-mode";
+exports.mixBlendMode = "mix-blend-mode";
+
+// Z INDEX
+exports.z = "z-index";
+exports.zIndex = "z-index";
