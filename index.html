@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="m:0 bgc:#fafafa fsz:16px md:fsz:18px">
   <head>
+    <!-- ANALYTICS: Start -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137013277-5"></script>
       <script>
@@ -10,14 +11,35 @@
       
         gtag('config', 'UA-137013277-5');
       </script> -->
+    <!-- ANALYTICS: End -->
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>
-      NoCSS - Build design systems, web pages, and custom user interfaces
-      without writing CSS.
+      UI Buddy - Build UI components, web pages, and design systems without writing CSS.
     </title>
+    <!-- SEO: Start -->
+    <meta
+      name="description"
+      content="UI Buddy is a CSS framework for building UI components, web pages, and consequently design systems without actually writing CSS."
+    />
+    <meta name="keywords" content="ui buddy, dcode studios, ui, ux, web sites, html, css, front end development, web, web development, awais kazmi, lahore, pakistan" />
+    <meta name="author" content="Awais Kazmi" />
+    <meta property="og:url" content="http://dcodestudios.com/uibuddy" />
+    <meta property="og:site_name" content="UI Buddy" />
+    <meta
+      property="og:image"
+      content="http://dcodestudios.com/uibuddy/cover.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="UI Buddy" />
+    <meta
+      property="og:description"
+      content="UI Buddy is a CSS framework for building UI components, web pages, and consequently design systems without actually writing CSS."
+    />
+    <!-- SEO: End -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;900&display=swap"
@@ -42,17 +64,17 @@
     </style>
     <link rel="stylesheet" href="./style.min.css" />
   </head>
-  <body class="m:0 ff:Inter,sans-serif">
+  <body class="m:0 ff:Inter,sans-serif maxWidth:1140px margin:0_auto pl:24px pr:24px ">
     <main>
       <section id="intro">
         <div
           component="container"
-          class="pl:24px pr:24px maxWidth:1140px margin:0_auto"
+          class="w:100%"
         >
           <p class="display my-custom-class fsz:32px ls:-1px">
             <span component="logo" class="mr:12px fsz:1.25em val:-5px clr:gray"
-              ><img src="./logo.png" height="32"/></span
-            >NoCSS
+              ><img src="./logo.svg" alt="UI Buddy Logo" height="64"/></span
+            >
           </p>
           <h1
             component="h1"
@@ -80,12 +102,12 @@
           <code
             component="full-code"
             class="ff:JetBrains_Mono bgc:#eee clr:#000 fsz:14px md:fsz:18px p:16px md:p:24px borderRadius:8px d:inline-block w:100% md:w:auto maxw:100% ws:nowrap ovx:auto ovy:hidden"
-            >npm install @dcodestudios/nocss</code
+            >npm install uibuddy</code
           >
         </div>
           <a
               component="link"
-              href="http://dcodestudios.com/nocss/docs"
+              href="http://dcodestudios.com/uibuddy/docs"
               target="_blank"
               class="d:inline-flex ai:center jc:center fw:500 color:#2980b9 hover:color:#00679D fsz:16px md:fsz:20px flexShrink:0"
               >Get Started</a
@@ -94,7 +116,7 @@
         </div>
       </section>
       <section id="statement">
-        <div class="container pl:20px pr:20px">
+        <div class="container">
           <h2
             component="h2"
             class="fsz:24px md:fsz:54px md:lh:60px fw:700 md:fw:900 mt:4rem mb:1rem ls:0px md:ls:-2px"
@@ -104,7 +126,7 @@
           <blockquote class="para m:0">
             I was forever looking for ways to make CSS scalable without having
             to go through a build process over and over again, and with minimal
-            back-and-forth movement between files. With NoCSS, you can add
+            back-and-forth movement between files. With UI Buddy, you can add
             your rules directly inside your HTML and build on the fly! Making the
             development process extremely scalable, ridiculously fast, and most
             importantly, enjoyable :)
@@ -112,11 +134,12 @@
           <p class="mt:2rem">
             <img
               class="borderRadius:100% boxShadow:0_0_0_4px_#fff,0_0_0_5px_#777"
-              src="./awaiskazmi.jfif"
+              src="./awaiskazmi.jpg"
+              alt="Awais Kazmi, the Author of UI Buddy"
               height="48"
             />
             <span class="d:block mt:.5rem">Awais Kazmi</span>
-            <span class="d:block color:#777 mt:.25rem">Creator of NoCSS</span>
+            <span class="d:block color:#777 mt:.25rem">Creator of UI Buddy</span>
           </p>
         </div>
       </section>
@@ -144,7 +167,7 @@
           </p>
           <p class="para">
             <a
-              href="http://dcodestudios.com/nocss/docs/syntax"
+              href="http://dcodestudios.com/uibuddy/docs/syntax"
               target="_blank"
               class="link"
               >Learn more</a
@@ -157,7 +180,7 @@
             >&quot;&gt;&lt;p/&gt;</code
           >
           <p>Demo:</p>
-          <div component="demo" class="br:8px p:24px bg:rgba(41,128,185,0.1)">
+          <div component="demo" class="brr:8px p:24px bg:rgba(41,128,185,0.1)">
             <p class="fsz:24px color:#2980b9">I'm a paragraph</p>
           </div>
         </div>
@@ -170,11 +193,11 @@
             (Almost) All of the CSS properties are supported, including and not
             limited to modifying an element's display, colors, spacing,
             typography, shadows, and everything else that is required to create
-            a pixel-perfect design.
+            that pixel-perfect design.
           </p>
           <p class="para">
             <a
-              href="http://dcodestudios.com/nocss/docs/list-of-supported-css-properties"
+              href="http://dcodestudios.com/uibuddy/docs/list-of-supported-css-properties"
               target="_blank"
               class="link"
               >Learn more</a
@@ -196,7 +219,7 @@
           <p class="subtitle">Mobile-First</p>
           <p class="h2 m:0">Everything is Responsive.</p>
           <p class="para">
-            Writing and managing complex media queries is no fun at all. NoCSS
+            Writing and managing complex media queries is no fun at all. UI Buddy
             allows you to build responsive designs right in your HTML instead.
           </p>
           <p class="para">
@@ -205,7 +228,7 @@
           </p>
           <p class="para">
             <a
-              href="http://dcodestudios.com/nocss/docs/responsiveness"
+              href="http://dcodestudios.com/uibuddy/docs/responsiveness"
               target="_blank"
               class="link"
               >Learn more</a
@@ -226,16 +249,15 @@
       <section id="states" class="section-wrapper">
         <div class="container">
           <p class="subtitle">States</p>
-          <p class="h2 m:0">Hover, focus, and active states also covered.</p>
+          <p class="h2 m:0">Hover, focus, active and many more states covered.</p>
           <p class="para">
-            Want to style something on hover? Simply add
-            <code class="inline-code">hover:</code> (or <code>active:</code> or
-            <code>focus:</code>) before the class you want to add to give
-            state-based styles to your element! Sweet, isn't it?
+            Want to style something on hover? Simply stick
+            <code class="inline-code">hover:</code> before the class you want to add to give
+            state-based styles to your element.
           </p>
           <p class="para">
             <a
-              href="http://dcodestudios.com/nocss/docs/states"
+              href="http://dcodestudios.com/uibuddy/docs/states"
               target="_blank"
               class="link"
               >Learn more</a
@@ -243,13 +265,13 @@
           </p>
           <p>Example:</p>
           <code class="full-code"
-            >&lt;p class=&quot;color:#2980b9 fsz:16px<span class="inline-code"
-              > hover:fsz:24px</span
+            >&lt;p class=&quot;color:#2980b9 letterSpacing:0px<span class="inline-code"
+              > hover:letterSpacing:4px</span
             >&quot;&gt;&lt;p/&gt;</code
           >
           <p>Demo:</p>
           <div class="demo">
-            <p class="color:#2980b9 fsz:16px hover:fsz:24px">Hover over me.</p>
+            <p class="color:#2980b9 letterSpacing:0px hover:letterSpacing:4px transition:all_0.2s_ease">Hover over me.</p>
           </div>
         </div>
       </section>
@@ -265,7 +287,7 @@
           </p>
           <p class="para">
             <a
-              href="http://dcodestudios.com/nocss/docs/responsive-states"
+              href="http://dcodestudios.com/uibuddy/docs/responsive-states"
               target="_blank"
               class="link"
               >Learn more</a
@@ -273,13 +295,13 @@
           </p>
           <p>Example:</p>
           <code class="full-code"
-            >&lt;p class=&quot;color:#2980b9 hover:fsz:20px<span class="inline-code"
-              > hover:md:fsz:36px</span
+            >&lt;p class=&quot;color:#2980b9 hover:letterSpacing:1px<span class="inline-code"
+              > hover:md:letterSpacing:8px</span
             >&quot;&gt;&lt;p/&gt;</code
           >
           <p>Demo:</p>
           <div class="demo">
-            <p class="color:#2980b9 hover:fsz:20px hover:md:fsz:36px">Hover over me.</p>
+            <p class="color:#2980b9 hover:letterSpacing:1px hover:md:letterSpacing:16px  transition:all_0.2s_ease">Hover over me.</p>
           </div>
         </div>
       </section>
@@ -296,7 +318,7 @@
           </p>
           <p class="para">
             <a
-              href="http://dcodestudios.com/nocss/docs/components"
+              href="http://dcodestudios.com/uibuddy/docs/components"
               target="_blank"
               class="link"
               >Learn more</a
@@ -338,7 +360,7 @@
           </p>
           <p class="para">
             <a
-              href="http://dcodestudios.com/nocss/docs/component-overrides"
+              href="http://dcodestudios.com/uibuddy/docs/component-overrides"
               target="_blank"
               class="link"
               >Learn more</a
@@ -373,10 +395,10 @@
             <p class="subtitle">Performance</p>
             <p class="h2 m:0">It's tiny af.</p>
             <p class="para">
-              NoCSS only generates CSS from the rules defined in your markup,
+              UI Buddy only generates CSS from the rules defined in your markup,
               which means your final bundle will never have any extra code that
-              you're never going to use, which ususally comes with other
-              frameworks.
+              you're never going to use anyway, which ususally comes with other
+              frameworks and there's no way to get rid of it.
             </p>
           </div>
         </section>
@@ -387,7 +409,7 @@
             Seamless integration with your favorite build tools! (Coming soon)
           </p>
           <p class="para">
-            You can use NoCSS with Gulp and PUG in order to further speed up
+            You can use UI Buddy with Gulp and PUG in order to further speed up
             your development process, which gives you more control options such
             as specifying output directory paths, running PostCSS plugins and
             much more!
@@ -395,9 +417,9 @@
         </div>
       </section>
     </main>
-    <footer class="bgc:#fff p:20px_0 md:p:40px">
+    <footer class="p:20px_0 md:p:40px_0 bt:1px_solid_#ddd">
       <div class="container">
-        <p class="fsz:12px md:fsz:14px textAlign:center md:textAlign:left">&copy; NoCSS. All Rights Reserved. Created by <a class="c:#000" href="http://dcodestudios.com" target="_blank">DCode Studios</a>.</p>
+        <p class="fsz:12px md:fsz:14px textAlign:center md:textAlign:left">&copy; UI Buddy. All Rights Reserved. Created by <a class="c:#000" href="http://dcodestudios.com" target="_blank">DCode Studios</a>.</p>
       </div>
       </div>
     </footer>

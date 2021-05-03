@@ -21,11 +21,11 @@ const concat = require("concat");
 const postcss = require("postcss");
 
 // 1. read all html files
-const nocss = () => {
-  glob(process.cwd() + "/*.html", {}, function(err, files) {
+const uibuddy = () => {
+  glob(process.cwd() + "/*.html", {}, function (err, files) {
     console.log(process.cwd());
     // 2. join all html files
-    concat(files).then(html => {
+    concat(files).then((html) => {
       // 3. parse and generate css
       css = magic.Magic(parser.cssClasses(html), parser.componentClasses(html));
       // 4. run postcss
@@ -33,21 +33,21 @@ const nocss = () => {
         require("postcss-combine-duplicated-selectors"),
         require("postcss-discard-duplicates"),
         require("autoprefixer"),
-        require("css-mqpacker")
+        require("css-mqpacker"),
       ])
         .process(css, {
           from: "style.css",
-          to: "style.min.css"
+          to: "style.min.css",
         })
-        .then(result => {
+        .then((result) => {
           // 5. generate style.min.css
           finalCss = fs.writeFile(
             process.cwd() + "/style.min.css",
             result.css,
             "utf8",
-            function(err, data) {
+            function (err, data) {
               if (err) throw err;
-              console.log("\x1b[32m%s\x1b[0m", "nocss build complete!");
+              console.log("\x1b[32m%s\x1b[0m", "UI Buddy build complete!");
             }
           );
         });
@@ -55,7 +55,7 @@ const nocss = () => {
   });
 };
 
-module.exports = nocss;
+module.exports = uibuddy;
 
 /*
 

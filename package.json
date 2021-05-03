@@ -1,10 +1,10 @@
 {
-  "name": "@dcodestudios/nocss",
-  "version": "1.0.12",
-  "description": "Build design systems, web pages, and custom user interfaces without writing CSS.",
-  "main": "nocss.js",
-  "repository": "https://github.com/awaiskazmi/nocss.git",
-  "homepage": "https://dcodestudios.com/nocss",
+  "name": "uibuddy",
+  "version": "1.0.0",
+  "description": "Build UI components, web pages, and design systems without writing CSS.",
+  "main": "uibuddy.js",
+  "repository": "https://github.com/awaiskazmi/uibuddy.git",
+  "homepage": "http://dcodestudios.com/uibuddy",
   "contributors": [
     "Awais Kazmi <devs.awais@gmail.com>",
     "Haleem Ul Hassan <haleemulhasan@hotmail.com>"
@@ -25,8 +25,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build": "run-func nocss.js build",
-    "watch": "run-func nocss.js watch"
+    "build": "run-func uibuddy.js build",
+    "watch": "run-func uibuddy.js watch"
   },
   "keywords": [],
   "author": "Awais Kazmi",
