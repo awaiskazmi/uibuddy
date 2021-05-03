@@ -76,6 +76,7 @@ exports.Magic = function(classes, componentClasses) {
 
           // if media query
           if (
+            classArr[0] == "xs" ||
             classArr[0] == "sm" ||
             classArr[0] == "md" ||
             classArr[0] == "lg" ||
@@ -92,7 +93,10 @@ exports.Magic = function(classes, componentClasses) {
           if (
             classArr[0] == "hover" ||
             classArr[0] == "focus" ||
-            classArr[0] == "active"
+            classArr[0] == "active" ||
+            classArr[0] == "visited" ||
+            classArr[0] == "disabled" ||
+            classArr[0] == "checked"
           ) {
             css += `.${classArr[0]}\\:${classArr[1]}\\:${className(
               classArr[2]
@@ -146,6 +150,7 @@ exports.Magic = function(classes, componentClasses) {
 
           // if media query
           if (
+            classArr[0] == "xs" ||
             classArr[0] == "sm" ||
             classArr[0] == "md" ||
             classArr[0] == "lg" ||
@@ -163,7 +168,10 @@ exports.Magic = function(classes, componentClasses) {
           if (
             classArr[0] == "hover" ||
             classArr[0] == "focus" ||
-            classArr[0] == "active"
+            classArr[0] == "active" ||
+            classArr[0] == "visited" ||
+            classArr[0] == "disabled" ||
+            classArr[0] == "checked"
           ) {
             css += `.${componentClass}:${
               classArr[0]

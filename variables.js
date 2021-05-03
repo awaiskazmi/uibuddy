@@ -17,197 +17,228 @@ exports.xl = "1920";
 // STATES
 exports.hover = "hover";
 exports.focus = "focus";
-exports.active = "focus";
+exports.active = "active";
+exports.visited = "visited";
+exports.disabled = "disabled";
+exports.checked = "checked";
 
-// BOX MODEL
-exports.box = "box-sizing";
-exports.boxSizing = "box-sizing";
-
-// TYPOGRAPHY
-exports.ff = "font-family";
-exports.fontFamily = "font-family";
-exports.fw = "font-weight";
-exports.fontWeight = "font-weight";
-exports.fs = "font-size";
-exports.fontSize = "font-size";
-exports.fst = "font-style";
-exports.fontStyle = "font-style";
-
-// COLORS
-exports.bg = "background";
-exports.background = "background";
-exports.bgc = "background-color";
-exports.backgroundColor = "background-color";
-exports.bgi = "background-image";
-exports.backgroundImage = "background-image";
-exports.bgp = "background-position";
-exports.backgroundPosition = "background-position";
-exports.clr = "color";
-exports.color = "color";
-
-// DISPLAY
-exports.d = "display";
-exports.display = "display";
-
-// VISIBILITY
-exports.v = "visibility";
-exports.visibility = "visibility";
-
-// FLEXBOX UTILITIES
-exports.ai = "align-items";
-exports.alignItems = "align-items";
-exports.ac = "align-content";
+// VARIABLES (ASC)
 exports.alignContent = "align-content";
+exports.ac = "align-content";
+exports.alignItems = "align-items";
+exports.ai = "align-items";
+exports.alignItems = "align-self";
 exports.as = "align-self";
-exports.alignSelf = "align-self";
-exports.jc = "justify-content";
-exports.justifyContent = "justify-content";
-exports.fg = "flex-grow";
-exports.flexGrow = "flex-grow";
-exports.fd = "flex-direction";
-exports.flexDirection = "flex-direction";
-exports.fls = "flex-shrink";
-exports.flexShrink = "flex-shrink";
-exports.fl = "flex";
-exports.flex = "flex";
-
-// GRID UTILITIES
-exports.gtc = "grid-template-columns";
-exports.gta = "grid-template-areas";
-exports.ga = "grid-area";
-
-// POSITION
-exports.pos = "position";
-exports.position = "position";
-exports.t = "top";
-exports.top = "top";
-exports.b = "bottom";
-exports.bottom = "bottom";
-exports.l = "left";
-exports.left = "left";
-exports.r = "right";
-exports.right = "right";
-
-// SIZING
-exports.col = "width";
-exports.w = "width";
-exports.width = "width";
-exports.h = "height";
-exports.height = "height";
-exports.maxw = "max-width";
-exports.maxWidth = "max-width";
-exports.minw = "min-width";
-exports.minWidth = "min-width";
-
-// PADDING
-exports.p = "padding";
-exports.padding = "padding";
-exports.pt = "padding-top";
-exports.paddingTop = "padding-top";
-exports.pr = "padding-right";
-exports.paddingRight = "padding-right";
-exports.pl = "padding-left";
-exports.paddingLeft = "padding-left";
-exports.pb = "padding-bottom";
-exports.paddingBottom = "padding-bottom";
-
-// MARGIN
-exports.m = "margin";
-exports.margin = "margin";
-exports.mt = "margin-top";
-exports.marginTop = "margin-top";
-exports.mr = "margin-right";
-exports.marginRight = "margin-right";
-exports.ml = "margin-left";
-exports.marginLeft = "margin-left";
-exports.mb = "margin-bottom";
-exports.marginBottom = "margin-bottom";
-
-// BORDER
-exports.bor = "border";
+exports.appearance = "appearance";
+exports.app = "appearance";
+exports.background = "background";
+exports.bg = "background";
+exports.backgroundAttachment = "background-attachment";
+exports.bga = "background-attachment";
+exports.backgroundBlendMode = "background-blend-mode";
+exports.bgb = "background-blend-mode";
+exports.bgbm = "background-blend-mode";
+exports.backgroundColor = "background-color";
+exports.bgc = "background-color";
+exports.backgroundImage = "background-image";
+exports.bgi = "background-image";
+exports.backgroundPosition = "background-position";
+exports.bgp = "background-position";
+exports.backgroundSize = "background-size";
+exports.bgs = "background-size";
 exports.border = "border";
-
-exports.bts = "border-top-style";
-exports.btw = "border-top-width";
-exports.btc = "border-top-color";
-exports.brs = "border-right-style";
-exports.brw = "border-right-width";
-exports.brc = "border-right-color";
-exports.bbs = "border-bottom-style";
-exports.bbw = "border-bottom-width";
+exports.b = "border";
+exports.borderBottomWidth = "border-bottom-color";
 exports.bbc = "border-bottom-color";
-exports.bls = "border-left-style";
-exports.blw = "border-left-width";
+exports.borderBottomStyle = "border-bottom-style";
+exports.bbs = "border-bottom-style";
+exports.borderBottomWidth = "border-bottom-width";
+exports.bbw = "border-bottom-width";
+exports.borderCollapse = "border-collapse";
+exports.bc = "border-collapse";
+exports.borderLeftWidth = "border-left-color";
 exports.blc = "border-left-color";
-
-exports.br = "border-radius";
+exports.borderLeftStyle = "border-left-style";
+exports.bls = "border-left-style";
+exports.borderLeftWidth = "border-left-width";
+exports.blw = "border-left-width";
 exports.borderRadius = "border-radius";
-
-// TEXT UTILITIES
-exports.lh = "line-height";
-exports.lineHeight = "line-height";
-exports.ls = "letter-spacing";
-exports.letterSpacing = "letter-spacing";
-exports.td = "text-decoration";
-exports.textDecodration = "text-decoration";
-exports.tal = "text-align";
-exports.textAlign = "text-align";
-exports.tt = "text-transform";
-exports.textTransform = "text-transform";
-exports.ts = "text-shadow";
-exports.textShadow = "text-shadow";
-exports.ws = "white-space";
-exports.whiteSpace = "white-space";
-
-// CURSOR
-exports.cur = "cursor";
-exports.cursor = "cursor";
-
-// OVERFLOW
-exports.ov = "overflow";
-exports.overflow = "overflow";
-exports.ovx = "overflow-x";
-exports.overflowX = "overflow-x";
-exports.ovy = "overflow-y";
-exports.overflowY = "overflow-y";
-
-// BOX SHADOW
-exports.bxs = "box-shadow";
+exports.br = "border-radius";
+exports.borderRightWidth = "border-right-color";
+exports.brc = "border-right-color";
+exports.borderRightStyle = "border-right-style";
+exports.brs = "border-right-style";
+exports.borderRightWidth = "border-right-width";
+exports.brw = "border-right-width";
+exports.borderTopWidth = "border-top-color";
+exports.btc = "border-top-color";
+exports.borderTopStyle = "border-top-style";
+exports.bts = "border-top-style";
+exports.borderTopWidth = "border-top-width";
+exports.btw = "border-top-width";
+exports.bottom = "bottom";
+exports.b = "bottom";
 exports.boxShadow = "box-shadow";
-
-// TRANSITION
-exports.trns = "transition";
-exports.transition = "transition";
-
-// ANIMATION
-exports.anim = "animation";
-exports.animation = "animation";
-
-// VERTICAL ALIGN
-exports.val = "vertical-align";
-exports.verticalAlign = "vertical-align";
-
-// TRANSFORM
-exports.transform = "transform";
-
-// OPACITY
-exports.o = "opacity";
-exports.op = "opacity";
-exports.opacity = "opacity";
-
-// OUTLINE
-exports.out = "outline";
-exports.outline = "outline";
-
-// FILTER
-exports.f = "filter";
+exports.boxsh = "box-shadow";
+exports.boxSizing = "box-sizing";
+exports.boxsz = "box-sizing";
+exports.clear = "clear";
+exports.color = "color";
+exports.clr = "color";
+exports.c = "color";
+exports.columnCount = "column-count";
+exports.cc = "column-count";
+exports.colc = "column-count";
+exports.cursor = "cursor";
+exports.cur = "cursor";
+exports.display = "display";
+exports.d = "display";
+exports.fill = "fill";
 exports.filter = "filter";
-
-// BLEND MODE
-exports.blend = "mix-blend-mode";
-exports.blendMode = "mix-blend-mode";
+exports.flex = "flex";
+exports.fl = "flex";
+exports.flexDirection = "flex-direction";
+exports.fld = "flex-direction";
+exports.flexGrow = "flex-grow";
+exports.flg = "flex-grow";
+exports.flexShrink = "flex-shrink";
+exports.fls = "flex-shrink";
+exports.flexWrap = "flex-wrap";
+exports.flw = "flex-wrap";
+exports.float = "float";
+exports.flt = "float";
+exports.fontFamily = "font-family";
+exports.ff = "font-family";
+exports.fontSize = "font-size";
+exports.fz = "font-size";
+exports.fsz = "font-size";
+exports.fontStyle = "font-style";
+exports.fs = "font-style";
+exports.fst = "font-style";
+exports.fontWeight = "font-weight";
+exports.fw = "font-weight";
+exports.gap = "gap";
+exports.gridA = "grid-area";
+exports.ga = "grid-area";
+exports.gridTemplateAreas = "grid-template-areas";
+exports.gta = "grid-template-areas";
+exports.gridTemplateColumns = "grid-template-columns";
+exports.gtc = "grid-template-columns";
+exports.gridTemplateRows = "grid-template-rows";
+exports.gtr = "grid-template-rows";
+exports.height = "height";
+exports.h = "height";
+exports.justifyContent = "justify-content";
+exports.jc = "justify-content";
+exports.justifyItems = "justify-items";
+exports.jc = "justify-items";
+exports.justifySelf = "justify-self";
+exports.jc = "justify-self";
+exports.left = "left";
+exports.l = "left";
+exports.letterSpacing = "letter-spacing";
+exports.ls = "letter-spacing";
+exports.lineHeight = "line-height";
+exports.lh = "line-height";
+exports.listStylePosition = "list-style-position";
+exports.lsp = "list-style-position";
+exports.listStyleType = "list-style-type";
+exports.lst = "list-style-type";
+exports.margin = "margin";
+exports.m = "margin";
+exports.marginBottom = "margin-bottom";
+exports.mb = "margin-bottom";
+exports.marginLeft = "margin-left";
+exports.ml = "margin-left";
+exports.marginRight = "margin-right";
+exports.mr = "margin-right";
+exports.marginTop = "margin-top";
+exports.mt = "margin-top";
+exports.maxHeight = "max-height";
+exports.maxh = "max-height";
+exports.maxWidth = "max-width";
+exports.maxw = "max-width";
+exports.minHeight = "min-height";
+exports.minh = "min-height";
+exports.minWidth = "min-width";
+exports.minw = "min-width";
 exports.mixBlendMode = "mix-blend-mode";
-
-// Z INDEX
-exports.z = "z-index";
+exports.mxb = "mix-blend-mode";
+exports.mxbm = "mix-blend-mode";
+exports.objectContain = "object-contain";
+exports.objc = "object-contain";
+exports.objectFit = "object-fit";
+exports.objf = "object-fit";
+exports.opacity = "opacity";
+exports.op = "opacity";
+exports.order = "order";
+exports.or = "order";
+exports.outline = "outline";
+exports.out = "outline";
+exports.overflow = "overflow";
+exports.ov = "overflow";
+exports.overflowX = "overflow-x";
+exports.ovx = "overflow-x";
+exports.overflowY = "overflow-y";
+exports.ovy = "overflow-y";
+exports.padding = "padding";
+exports.p = "padding";
+exports.paddingBottom = "padding-bottom";
+exports.pb = "padding-bottom";
+exports.paddingLeft = "padding-left";
+exports.pl = "padding-left";
+exports.paddingRight = "padding-right";
+exports.pr = "padding-right";
+exports.paddingTop = "padding-top";
+exports.pt = "padding-top";
+exports.pointerEvents = "pointer-events";
+exports.pe = "pointer-events";
+exports.ptre = "pointer-events";
+exports.position = "position";
+exports.pos = "position";
+exports.resize = "resize";
+exports.rsz = "resize";
+exports.right = "right";
+exports.r = "right";
+exports.stroke = "stroke";
+exports.strokeWidth = "stroke-width";
+exports.tableLayout = "table-layout";
+exports.tbl = "table-layout";
+exports.textAlign = "text-align";
+exports.tal = "text-align";
+exports.textDecoration = "text-decoration";
+exports.txd = "text-decoration";
+exports.textOverflow = "text-overflow";
+exports.tov = "text-overflow";
+exports.textShadow = "text-shadow";
+exports.txsh = "text-shadow";
+exports.textTransform = "text-transform";
+exports.ttf = "text-transform";
+exports.tt = "text-transform";
+exports.top = "top";
+exports.t = "top";
+exports.transform = "transform";
+exports.transformOrigin = "transform-origin";
+exports.transition = "transition";
+exports.trns = "transition";
+exports.transitionDelay = "transition-delay";
+exports.trnsdl = "transition-delay";
+exports.transitionDuration = "transition-duration";
+exports.trnsdu = "transition-duration";
+exports.transitionTiming = "transition-timing-function";
+exports.trnstf = "transition-timing-function";
+exports.userSelect = "user-select";
+exports.sel = "user-select";
+exports.verticalAlign = "vertical-align";
+exports.val = "vertical-align";
+exports.visibility = "visibility";
+exports.v = "visibility";
+exports.whiteSpace = "white-space";
+exports.wsp = "white-space";
+exports.ws = "white-space";
+exports.width = "width";
+exports.w = "width";
+exports.wordBreak = "word-break";
+exports.wb = "word-break";
 exports.zIndex = "z-index";
+exports.z = "z-index";

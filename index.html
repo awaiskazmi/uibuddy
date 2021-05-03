@@ -1,6 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" class="m:0 background:#fafafa fs:16px md:fs:18px">
+<html lang="en" class="m:0 bgc:#fafafa fsz:16px md:fsz:18px">
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137013277-5"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'UA-137013277-5');
+      </script> -->
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -22,6 +32,13 @@
       * {
         box-sizing: border-box;
       }
+      section:not(:last-child)::after {
+        content: '';
+        display: block;
+        height: 1px;
+        margin-top: 4rem;
+        background-color: #ddd;
+      }
     </style>
     <link rel="stylesheet" href="./style.min.css" />
   </head>
@@ -32,20 +49,20 @@
           component="container"
           class="pl:24px pr:24px maxWidth:1140px margin:0_auto"
         >
-          <p class="display my-custom-class fs:32px ls:-1px">
-            <span component="logo" class="mr:12px fs:1.25em val:-5px clr:gray"
+          <p class="display my-custom-class fsz:32px ls:-1px">
+            <span component="logo" class="mr:12px fsz:1.25em val:-5px clr:gray"
               ><img src="./logo.png" height="32"/></span
             >NoCSS
           </p>
           <h1
             component="h1"
-            class="fs:28px md:fs:72px fw:900 lh:30px md:lh:70px md:ls:-2px"
+            class="fsz:28px md:fsz:72px fw:900 lh:30px md:lh:70px md:ls:-2px"
           >
             Build any design,<br />without writing CSS.
           </h1>
           <p
             component="para"
-            class="md:fs:24px lh:24px md:lh:36px clr:#333 mb:24px md:mb:36px md:maxw:80%"
+            class="md:fsz:24px lh:24px md:lh:36px clr:#333 mb:24px md:mb:36px md:maxw:80%"
           >
             Write HTML intuitively with classes like
             <span
@@ -58,35 +75,37 @@
             to build any design directly in your markup, while we take care of
             the CSS for you!
           </p>
+          <div class="d:flex">
+            <div class="mr:1rem">
           <code
             component="full-code"
-            class="ff:JetBrains_Mono bgc:#eee fs:14px md:fs:18px p:16px md:p:24px br:12px mb:48px d:inline-block w:100% md:w:auto ws:nowrap ovx:auto ovy:hidden"
+            class="ff:JetBrains_Mono bgc:#eee clr:#000 fsz:14px md:fsz:18px p:16px md:p:24px borderRadius:8px d:inline-block w:100% md:w:auto maxw:100% ws:nowrap ovx:auto ovy:hidden"
             >npm install @dcodestudios/nocss</code
           >
-          <p class="para textAlign:left mt:-1rem">
-            <a
+        </div>
+          <a
               component="link"
-              href="https://github.com/awaiskazmi/nocss"
+              href="http://dcodestudios.com/nocss/docs"
               target="_blank"
-              class="fw:500 color:#2980b9"
+              class="d:inline-flex ai:center jc:center fw:500 color:#2980b9 hover:color:#00679D fsz:16px md:fsz:20px flexShrink:0"
               >Get Started</a
             >
-          </p>
+        </div>
         </div>
       </section>
       <section id="statement">
-        <div class="container p:20px md:textAlign:center">
+        <div class="container pl:20px pr:20px">
           <h2
             component="h2"
-            class="fs:24px md:fs:54px md:lh:60px fw:700 md:fw:900 mb:1rem ls:0px md:ls:-2px"
+            class="fsz:24px md:fsz:54px md:lh:60px fw:700 md:fw:900 mt:4rem mb:1rem ls:0px md:ls:-2px"
           >
             Insanely Fast and Furious!
           </h2>
-          <blockquote class="para m:0_auto">
+          <blockquote class="para m:0">
             I was forever looking for ways to make CSS scalable without having
             to go through a build process over and over again, and with minimal
-            back-and-forth movement between files. With NoCSS, you can just add
-            your rules inside your HTML and build on the fly, making the
+            back-and-forth movement between files. With NoCSS, you can add
+            your rules directly inside your HTML and build on the fly! Making the
             development process extremely scalable, ridiculously fast, and most
             importantly, enjoyable :)
           </blockquote>
@@ -109,34 +128,38 @@
         <div class="container">
           <p
             component="subtitle"
-            class="fs:10px md:fs:16px color:#777 ls:1px tt:uppercase mb:8px md:mb:12px"
+            class="fsz:10px md:fsz:16px color:#777 ls:1px tt:uppercase mb:8px md:mb:12px"
           >
             Speed
           </p>
           <p class="h2 m:0">Build as you go.</p>
           <p class="para">
             Need to add 24px font size to an element? Simply give it a class of
-            <code class="inline-code">fs:24px</code> and you're done! Giving it
-            a class of <code class="inline-code">color:red</code> to change its
-            color. Try playing aournd with
+            <code class="inline-code">fsz:24px</code> and you're done! Giving it
+            a class of <code class="inline-code">color:red</code> will change
+            its color. Try playing aournd with
             <code class="inline-code">letterSpacing</code>,
             <code class="inline-code">lineHeight</code>, and
             <code class="inline-code">fontWeight</code>.
           </p>
           <p class="para">
             <a
-              component="link"
-              href="https://github.com/awaiskazmi/nocss"
+              href="http://dcodestudios.com/nocss/docs/syntax"
               target="_blank"
-              class="fw:500 color:#2980b9"
+              class="link"
               >Learn more</a
             >
           </p>
           <p>Example:</p>
           <code class="full-code"
-            >&lt;h1 class="<span class="inline-code">fs:24px color:red</span
-            >"&gt;&lt;h1/&gt;</code
+            >&lt;p class=&quot;<span class="inline-code"
+              >fsz:24px color:#2980b9</span
+            >&quot;&gt;&lt;p/&gt;</code
           >
+          <p>Demo:</p>
+          <div component="demo" class="br:8px p:24px bg:rgba(41,128,185,0.1)">
+            <p class="fsz:24px color:#2980b9">I'm a paragraph</p>
+          </div>
         </div>
       </section>
       <section id="properties" class="section-wrapper">
@@ -151,39 +174,21 @@
           </p>
           <p class="para">
             <a
-              component="link"
-              href="https://github.com/awaiskazmi/nocss"
+              href="http://dcodestudios.com/nocss/docs/list-of-supported-css-properties"
               target="_blank"
-              class="fw:500 color:#2980b9"
+              class="link"
               >Learn more</a
             >
           </p>
           <p>Example:</p>
           <code class="full-code"
-            >&lt;div class="<span class="inline-code">d:flex p:24px</span
-            >"&gt;&lt;div/&gt;</code
+            >&lt;div class=&quot;<span class="inline-code">d:flex p:54px</span
+            >&quot;&gt;&lt;div/&gt;</code
           >
-        </div>
-      </section>
-      <section id="light" class="section-wrapper mb:96px">
-        <div class="container">
-          <p class="subtitle">Performance</p>
-          <p class="h2 m:0">It's tiny af.</p>
-          <p class="para">
-            NoCSS only generates CSS from the rules defined in your markup,
-            which means your final bundle will never have any extra code that
-            you're never going to use, which ususally comes with other
-            frameworks.
-          </p>
-          <p class="para">
-            <a
-              component="link"
-              href="https://github.com/awaiskazmi/nocss"
-              target="_blank"
-              class="fw:500 color:#2980b9"
-              >Learn more</a
-            >
-          </p>
+          <p>Demo:</p>
+          <div class="demo">
+            <p class="d:flex p:54px">I'm a flexbox with 54px padding. Go ahead an inspect me.</p>
+          </div>
         </div>
       </section>
       <section id="responsive" class="section-wrapper">
@@ -200,18 +205,22 @@
           </p>
           <p class="para">
             <a
-              component="link"
-              href="https://github.com/awaiskazmi/nocss"
+              href="http://dcodestudios.com/nocss/docs/responsiveness"
               target="_blank"
-              class="fw:500 color:#2980b9"
+              class="link"
               >Learn more</a
             >
           </p>
           <p>Example:</p>
           <code class="full-code"
-            >&lt;div class="<span class="inline-code">fs:14px md:fs:24px</span
-            >"&gt;&lt;div/&gt;</code
+            >&lt;div class=&quot;fsz:14px<span class="inline-code"
+              > md:fsz:24px</span
+            >&quot;&gt;&lt;div/&gt;</code
           >
+          <p>Demo:</p>
+          <div class="demo lh:1.5">
+            <p class="fsz:14px md:fsz:24px">My font size is 14px on smaller screens and 24px on medium-sized screens and up. Go ahead and resize the browser window to see me in action.</p>
+          </div>
         </div>
       </section>
       <section id="states" class="section-wrapper">
@@ -226,19 +235,22 @@
           </p>
           <p class="para">
             <a
-              component="link"
-              href="https://github.com/awaiskazmi/nocss"
+              href="http://dcodestudios.com/nocss/docs/states"
               target="_blank"
-              class="fw:500 color:#2980b9"
+              class="link"
               >Learn more</a
             >
           </p>
           <p>Example:</p>
           <code class="full-code"
-            >&lt;p class="<span class="inline-code"
-              >color:red hover:color:blue</span
-            >"&gt;&lt;p/&gt;</code
+            >&lt;p class=&quot;color:#2980b9 fsz:16px<span class="inline-code"
+              > hover:fsz:24px</span
+            >&quot;&gt;&lt;p/&gt;</code
           >
+          <p>Demo:</p>
+          <div class="demo">
+            <p class="color:#2980b9 fsz:16px hover:fsz:24px">Hover over me.</p>
+          </div>
         </div>
       </section>
       <section id="responsiveStates" class="section-wrapper">
@@ -253,19 +265,22 @@
           </p>
           <p class="para">
             <a
-              component="link"
-              href="https://github.com/awaiskazmi/nocss"
+              href="http://dcodestudios.com/nocss/docs/responsive-states"
               target="_blank"
-              class="fw:500 color:#2980b9"
+              class="link"
               >Learn more</a
             >
           </p>
           <p>Example:</p>
           <code class="full-code"
-            >&lt;p class="<span class="inline-code"
-              >hover:color:red hover:md:color:blue</span
-            >"&gt;&lt;p/&gt;</code
+            >&lt;p class=&quot;color:#2980b9 hover:fsz:20px<span class="inline-code"
+              > hover:md:fsz:36px</span
+            >&quot;&gt;&lt;p/&gt;</code
           >
+          <p>Demo:</p>
+          <div class="demo">
+            <p class="color:#2980b9 hover:fsz:20px hover:md:fsz:36px">Hover over me.</p>
+          </div>
         </div>
       </section>
       <section id="both" class="section-wrapper">
@@ -281,27 +296,34 @@
           </p>
           <p class="para">
             <a
-              component="link"
-              href="https://github.com/awaiskazmi/nocss"
+              href="http://dcodestudios.com/nocss/docs/components"
               target="_blank"
-              class="fw:500 color:#2980b9"
+              class="link"
               >Learn more</a
             >
           </p>
           <p>Example:</p>
-          <code class="full-code mb:1rem"
+          <code class="full-code"
             >&lt;div
-            <span class="inline-code">component="button"</span> class="p:24px
-            fs:14px"&gt;&lt;div/&gt;</code
+            <span class="inline-code">component=&quot;button&quot;</span>
+            class=&quot;d:inline-block bgc:#2980b9 hover:bgc:#00679D color:#fff p:12px_24px fsz:16px borderRadius:8px cur:pointer&quot;&gt;&lt;div/&gt;</code
           >
+          <p>Demo:</p>
+          <div class="demo mb:2rem">
+            <p component="button" class="d:inline-block bgc:#2980b9 hover:bgc:#00679D color:#fff p:12px_24px fsz:16px borderRadius:8px cur:pointer">Button component</p>
+          </div>
           <p>
             Use the component's name as a class to create an instance:
           </p>
           <code class="full-code"
             >&lt;div
-            <span class="inline-code">class="button"</span
+            <span class="inline-code">class=&quot;button&quot;</span
             >&gt;&lt;div/&gt;</code
           >
+          <p>Demo:</p>
+          <div class="demo">
+            <p class="button">Button instance. Go ahead and inspect me.</p>
+          </div>
         </div>
       </section>
       <section id="overrides" class="section-wrapper">
@@ -316,34 +338,53 @@
           </p>
           <p class="para">
             <a
-              component="link"
-              href="https://github.com/awaiskazmi/nocss"
+              href="http://dcodestudios.com/nocss/docs/component-overrides"
               target="_blank"
-              class="fw:500 color:#2980b9"
+              class="link"
               >Learn more</a
             >
           </p>
           <p>Example:</p>
-          <code class="full-code mb:1rem"
+          <code class="full-code"
             >&lt;div
-            <span class="inline-code">component="button"</span> class="p:24px
-            fs:14px borderRadius:4px"&gt;&lt;div/&gt;</code
+            <span class="inline-code">component=&quot;button&quot;</span>
+            class=&quot;d:inline-block bgc:#2980b9 hover:bgc:#00679D color:#fff p:12px_24px fsz:16px borderRadius:8px cur:pointer&quot;&gt;&lt;div/&gt;</code
           >
+          <p>Demo:</p>
+          <div class="demo mb:2rem">
+            <p class="button">Button Component</p>
+          </div>
           <p>
             Create an instance of button and override border radius:
           </p>
           <code class="full-code"
-            >&lt;div class="button
+            >&lt;div class=&quot;button
             <span class="inline-code"> borderRadius:100px</span
-            >"&gt;&lt;div/&gt;</code
+            >&quot;&gt;&lt;div/&gt;</code
           >
+          <p>Demo:</p>
+          <div class="demo mb:2rem">
+            <p class="button borderRadius:100px">Button component with override. Go ahead and inspect me.</p>
+          </div>
         </div>
       </section>
-      <section id="overrides" class="section-wrapper mb:96px">
+      <section id="light" class="section-wrapper mb:96px">
+          <div class="container">
+            <p class="subtitle">Performance</p>
+            <p class="h2 m:0">It's tiny af.</p>
+            <p class="para">
+              NoCSS only generates CSS from the rules defined in your markup,
+              which means your final bundle will never have any extra code that
+              you're never going to use, which ususally comes with other
+              frameworks.
+            </p>
+          </div>
+        </section>
+      <section id="integration" class="section-wrapper mb:96px">
         <div class="container">
           <p class="subtitle">Integration</p>
           <p class="h2 m:0">
-            Seamless integration with your favorite build tools!
+            Seamless integration with your favorite build tools! (Coming soon)
           </p>
           <p class="para">
             You can use NoCSS with Gulp and PUG in order to further speed up
@@ -351,18 +392,14 @@
             as specifying output directory paths, running PostCSS plugins and
             much more!
           </p>
-          <p class="para mt:0">
-            <a
-              component="link"
-              href="https://github.com/awaiskazmi/nocss"
-              target="_blank"
-              class="fw:500 color:#2980b9"
-              >Learn more</a
-            >
-          </p>
         </div>
       </section>
     </main>
-    <footer></footer>
+    <footer class="bgc:#fff p:20px_0 md:p:40px">
+      <div class="container">
+        <p class="fsz:12px md:fsz:14px textAlign:center md:textAlign:left">&copy; NoCSS. All Rights Reserved. Created by <a class="c:#000" href="http://dcodestudios.com" target="_blank">DCode Studios</a>.</p>
+      </div>
+      </div>
+    </footer>
   </body>
 </html>
