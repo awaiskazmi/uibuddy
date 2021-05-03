@@ -1,10 +1,10 @@
 # UI Buddy
 
-Build fully functional design systems, web pages, and custom user interfaces without writing CSS.
+Build UI components, web pages, and design systems without writing CSS.
 
 ## Documentation
 
-For full documentation, visit [dcodestudios.com/uibuddy](http://dcodestudios.com/uibuddy).
+For full documentation, visit [dcodestudios.com/uibuddy/docs](http://dcodestudios.com/uibuddy/docs).
 
 ## Installation
 
