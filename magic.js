@@ -1,11 +1,10 @@
 var v = require("./variables.js");
-var u = require("./unit.js");
-var p = require("./property.js");
 
 var exports = (module.exports = {});
-exports.Magic = function(classes, componentClasses) {
+exports.Magic = function (simpleClasses, componentClasses, parentStateClasses) {
   // classes = array of unique css classes
   // componentClasses = JSON object with className:classList
+  // parentStateClasses = JSON array with componentName, componentParent, and componentClasses
   /**
    * 1. Loop through all classes
    * 2. Match with variables
@@ -14,139 +13,125 @@ exports.Magic = function(classes, componentClasses) {
    * 5. Return as string
    */
 
-  var unitValue = function(value, unit) {
-    // modify values to correct css
-    value = value.split("_").join(" ");
-
-    // if no unit specified
-    if (!unit) {
-      return value;
-    } else {
-      let unitVal = unit.split("-")[0];
-      let unitPosition = unit.split("-")[1];
-
-      // prefix the unit
-      if (unitPosition == "p") {
-        return unitVal + value;
-      }
-      // suffix the unit
-      if (unitPosition == "s") {
-        return value + unitVal;
-      }
-    }
+  var cssValue = function (value) {
+    return value.split("_").join(" ");
   };
 
-  var className = function(string) {
+  var className = function (string) {
     let symbols = ["#", "(", ")", ",", "%", ".", "'"];
 
-    symbols.forEach(function(value, index) {
+    symbols.forEach(function (value, index) {
       string = string.split(value).join("\\" + value);
     });
 
     return string;
   };
 
-  var makeClass = function(classArray) {
+  var makeClass = function (classString) {
     var css = "";
-    for (i = 0; i < classArray.length; i++) {
-      let classArr = classArray[i].split(":");
+    let classArr = classString.split(":");
 
-      // naming class only
-      if (classArr.length == 1) {
-        continue;
-      } else {
-        // if both media query & state added
-        if (classArr.length == 4) {
-          unit = u.Unit(v[classArr[2]]);
-          property = p.Property(v[classArr[2]]);
+    // random class
+    if (classArr.length <= 1) {
+      return;
+    } else {
+      // if both media query & state added
+      if (classArr.length == 4) {
+        property = v[classArr[2]];
+        value = cssValue(classArr[3]);
 
-          css += `@media (min-width: ${v[classArr[1]]}px) {`;
-          css += `.${classArr[0]}\\:${classArr[1]}\\:${
+        css += `@media (min-width: ${v[classArr[1]]}px) {`;
+        css += `.${classArr[0]}\\:${classArr[1]}\\:${classArr[2]}\\:${className(
+          classArr[3]
+        )}:${classArr[0]} { ${property}: ${value}!important; }`;
+        css += "}";
+      }
+
+      // if media query/state added
+      if (classArr.length == 3) {
+        property = v[classArr[1]];
+        value = cssValue(classArr[2]);
+
+        // if media query
+        if (
+          classArr[0] == "xs" ||
+          classArr[0] == "sm" ||
+          classArr[0] == "md" ||
+          classArr[0] == "lg" ||
+          classArr[0] == "xl"
+        ) {
+          css += `@media (min-width: ${v[classArr[0]]}px) {`;
+          css += `.${classArr[0]}\\:${classArr[1]}\\:${className(
             classArr[2]
-          }\\:${className(classArr[3])}:${
-            classArr[0]
-          } { ${property}: ${unitValue(classArr[3], unit)}!important; }`;
+          )} { ${property}: ${value}!important; }`;
           css += "}";
         }
 
-        // if media query/state added
-        if (classArr.length == 3) {
-          unit = u.Unit(v[classArr[1]]);
-          property = p.Property(v[classArr[1]]);
-
-          // if media query
-          if (
-            classArr[0] == "xs" ||
-            classArr[0] == "sm" ||
-            classArr[0] == "md" ||
-            classArr[0] == "lg" ||
-            classArr[0] == "xl"
-          ) {
-            css += `@media (min-width: ${v[classArr[0]]}px) {`;
-            css += `.${classArr[0]}\\:${classArr[1]}\\:${className(
-              classArr[2]
-            )} { ${property}: ${unitValue(classArr[2], unit)}!important; }`;
-            css += "}";
-          }
-
-          // if state
-          if (
-            classArr[0] == "hover" ||
-            classArr[0] == "focus" ||
-            classArr[0] == "active" ||
-            classArr[0] == "visited" ||
-            classArr[0] == "disabled" ||
-            classArr[0] == "checked"
-          ) {
-            css += `.${classArr[0]}\\:${classArr[1]}\\:${className(
-              classArr[2]
-            )}:${classArr[0]} { ${property}: ${unitValue(
-              classArr[2],
-              unit
-            )}!important; }`;
-          }
+        // if state
+        if (
+          classArr[0] == "hover" ||
+          classArr[0] == "focus" ||
+          classArr[0] == "active" ||
+          classArr[0] == "visited" ||
+          classArr[0] == "disabled" ||
+          classArr[0] == "checked"
+        ) {
+          css += `.${classArr[0]}\\:${classArr[1]}\\:${className(
+            classArr[2]
+          )}:${classArr[0]} { ${property}: ${value}!important; }`;
         }
 
-        // if no media query added
-        if (classArr.length == 2) {
-          unit = u.Unit(v[classArr[0]]);
-          property = p.Property(v[classArr[0]]);
-          css += `.${classArr[0]}\\:${className(
+        // if group state
+        if (
+          classArr[0] == "parent-hover" ||
+          classArr[0] == "parent-focus" ||
+          classArr[0] == "parent-active" ||
+          classArr[0] == "parent-visited" ||
+          classArr[0] == "parent-disabled" ||
+          classArr[0] == "parent-checked"
+        ) {
+          css += `.parent:${classArr[0].split("-")[1]} .${classArr[0]}\\:${
             classArr[1]
-          )} { ${property}: ${unitValue(classArr[1], unit)}!important; }`;
+          }\\:${className(classArr[2])} { ${property}: ${value}!important; }`;
         }
+      }
+
+      // if no media query added
+      if (classArr.length == 2) {
+        property = v[classArr[0]];
+        value = cssValue(classArr[1]);
+        css += `.${classArr[0]}\\:${className(
+          classArr[1]
+        )} { ${property}: ${value}!important; }`;
       }
     }
 
     return css;
   };
 
-  var makeCss = function(componentClass, classArray) {
+  var makeCss = function (componentClass, classArray) {
     var css = "";
     for (i = 0; i < classArray.length; i++) {
       let classArr = classArray[i].split(":");
 
       // naming class only
-      if (classArr.length == 1) {
+      if (classArr.length <= 1) {
         continue;
       } else {
         // if both media query & state added
         if (classArr.length == 4) {
-          unit = u.Unit(v[classArr[2]]);
-          property = p.Property(v[classArr[2]]);
+          property = v[classArr[2]];
+          value = cssValue(classArr[3]);
 
           css += `@media (min-width: ${v[classArr[1]]}px) {`;
-          css += `.${componentClass}:${classArr[0]} { ${property}: ${unitValue(
-            classArr[3],
-            unit
-          )}; }`;
+          css += `.${componentClass}:${classArr[0]} { ${property}: ${value}; }`;
           css += "}";
         }
 
         // if media query/state added
         if (classArr.length == 3) {
-          unit = u.Unit(v[classArr[1]]);
-          property = p.Property(v[classArr[1]]);
+          property = v[classArr[1]];
+          value = cssValue(classArr[2]);
 
           // if media query
           if (
@@ -157,10 +142,7 @@ exports.Magic = function(classes, componentClasses) {
             classArr[0] == "xl"
           ) {
             css += `@media (min-width: ${v[classArr[0]]}px) {`;
-            css += `.${componentClass} { ${property}: ${unitValue(
-              classArr[2],
-              unit
-            )}; }`;
+            css += `.${componentClass} { ${property}: ${value}; }`;
             css += "}";
           }
 
@@ -173,20 +155,29 @@ exports.Magic = function(classes, componentClasses) {
             classArr[0] == "disabled" ||
             classArr[0] == "checked"
           ) {
-            css += `.${componentClass}:${
-              classArr[0]
-            } { ${property}: ${unitValue(classArr[2], unit)}; }`;
+            css += `.${componentClass}:${classArr[0]} { ${property}: ${value}; }`;
+          }
+
+          // if group state
+          if (
+            classArr[0] == "parent-hover" ||
+            classArr[0] == "parent-focus" ||
+            classArr[0] == "parent-active" ||
+            classArr[0] == "parent-visited" ||
+            classArr[0] == "parent-disabled" ||
+            classArr[0] == "parent-checked"
+          ) {
+            css += `.parent:${classArr[0].split("-")[1]} .${classArr[0]}\\:${
+              classArr[1]
+            }\\:${className(classArr[2])} { ${property}: ${value}!important; }`;
           }
         }
 
         // if no media query added
         if (classArr.length == 2) {
-          unit = u.Unit(v[classArr[0]]);
-          property = p.Property(v[classArr[0]]);
-          css += `.${componentClass} { ${property}: ${unitValue(
-            classArr[1],
-            unit
-          )}; }`;
+          property = v[classArr[0]];
+          value = cssValue(classArr[1]);
+          css += `.${componentClass} { ${property}: ${value}; }`;
         }
       }
     }
@@ -194,7 +185,34 @@ exports.Magic = function(classes, componentClasses) {
     return css;
   };
 
-  var css = makeClass(classes);
+  var makeParentStateCss = function (parentStateClassesObject) {
+    let css = "";
+    // 1. get all classes
+    let classes = parentStateClassesObject.componentClasses;
+
+    // 2. loop through all classes
+    for (var i = 0; i < classes.length; i++) {
+      // 3. get state
+      let state = classes[i].split(":")[0].split("-")[1];
+      let pv = classes[i].split(":");
+      // console.log(classes[i]);
+      // 4. prepare css according to state
+      css += `.${parentStateClassesObject.componentParent}:${state} .${
+        parentStateClassesObject.componentName
+      }{${v[pv[1]]}:${pv[2]};}`;
+    }
+
+    return css;
+  };
+
+  // SIMPLE CSS CLASSES
+  var simpleCss = "";
+
+  for (i = 0; i < simpleClasses.length; i++) {
+    simpleCss += makeClass(simpleClasses[i]);
+  }
+
+  // COMPONENT CLASSES
   var componentCss = "";
 
   for (var key in componentClasses) {
@@ -203,5 +221,12 @@ exports.Magic = function(classes, componentClasses) {
     componentCss += makeCss(key, cClasses);
   }
 
-  return css + " " + componentCss;
+  // PARENT STATE CLASSES
+  var parentStateCss = "";
+
+  for (var i = 0; i < parentStateClasses.length; i++) {
+    parentStateCss += makeParentStateCss(parentStateClasses[i]);
+  }
+
+  return simpleCss + " " + componentCss + " " + parentStateCss;
 };

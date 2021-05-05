@@ -27,7 +27,11 @@ const uibuddy = () => {
     // 2. join all html files
     concat(files).then((html) => {
       // 3. parse and generate css
-      css = magic.Magic(parser.cssClasses(html), parser.componentClasses(html));
+      css = magic.Magic(
+        parser.cssClasses(html),
+        parser.componentClasses(html),
+        parser.parentStateClasses(html)
+      );
       // 4. run postcss
       postcss([
         require("postcss-combine-duplicated-selectors"),
