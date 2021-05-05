@@ -66,7 +66,7 @@ exports.parentStateClasses = function (html) {
     });
   }
 
-  // console.log(componentClasses);
+  console.log(componentClasses);
 
   return componentClasses;
 };

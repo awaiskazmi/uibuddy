@@ -40,11 +40,24 @@ exports.Magic = function (simpleClasses, componentClasses, parentStateClasses) {
         property = v[classArr[2]];
         value = cssValue(classArr[3]);
 
-        css += `@media (min-width: ${v[classArr[1]]}px) {`;
-        css += `.${classArr[0]}\\:${classArr[1]}\\:${classArr[2]}\\:${className(
-          classArr[3]
-        )}:${classArr[0]} { ${property}: ${value}!important; }`;
-        css += "}";
+        // if no parent-state class present
+        if (classArr[0].indexOf("parent") < 0) {
+          css += `@media (min-width: ${v[classArr[1]]}px) {`;
+          css += `.${classArr[0]}\\:${classArr[1]}\\:${
+            classArr[2]
+          }\\:${className(classArr[3])}:${classArr[0]}:${
+            classArr[0]
+          } { ${property}: ${value}!important; }`;
+          css += "}";
+        } else {
+          css += `@media (min-width: ${v[classArr[1]]}px) {`;
+          css += `.parent:${classArr[0].split("-")[1]} .${classArr[0]}\\:${
+            classArr[1]
+          }\\:${classArr[2]}\\:${className(
+            classArr[3]
+          )} { ${property}: ${value}!important; }`;
+          css += "}";
+        }
       }
 
       // if media query/state added
@@ -119,7 +132,8 @@ exports.Magic = function (simpleClasses, componentClasses, parentStateClasses) {
         continue;
       } else {
         // if both media query & state added
-        if (classArr.length == 4) {
+        // && classArr[0].indexOf("parent") < 0
+        if (classArr.length == 4 && classArr[0].indexOf("parent") < 0) {
           property = v[classArr[2]];
           value = cssValue(classArr[3]);
 
@@ -192,14 +206,27 @@ exports.Magic = function (simpleClasses, componentClasses, parentStateClasses) {
 
     // 2. loop through all classes
     for (var i = 0; i < classes.length; i++) {
-      // 3. get state
-      let state = classes[i].split(":")[0].split("-")[1];
-      let pv = classes[i].split(":");
-      // console.log(classes[i]);
-      // 4. prepare css according to state
-      css += `.${parentStateClassesObject.componentParent}:${state} .${
-        parentStateClassesObject.componentName
-      }{${v[pv[1]]}:${pv[2]};}`;
+      // 3. split class
+      let itemClass, state;
+      itemClass = classes[i].split(":");
+      state = itemClass[0].split("-")[1];
+
+      // if media breakpoint added
+      if (itemClass.length == 4) {
+        media = itemClass[1];
+        property = itemClass[2];
+        value = itemClass[3];
+
+        // 4. prepare css according to state
+        css += `@media(min-width: ${v[media]}px) {`;
+        css += `.${parentStateClassesObject.componentParent}:${state} .${parentStateClassesObject.componentName}{${v[property]}:${value};}`;
+        css += `}`;
+      } else {
+        property = itemClass[1];
+        value = itemClass[2];
+        // 4. prepare css according to state
+        css += `.${parentStateClassesObject.componentParent}:${state} .${parentStateClassesObject.componentName}{${v[property]}:${value};}`;
+      }
     }
 
     return css;
