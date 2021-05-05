@@ -1,6 +1,6 @@
 {
   "name": "uibuddy",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Build UI components, web pages, and design systems without writing CSS.",
   "main": "index.js",
   "repository": "https://github.com/awaiskazmi/uibuddy.git",
