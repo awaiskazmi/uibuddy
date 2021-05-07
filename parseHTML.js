@@ -1,15 +1,15 @@
 var jsdom = require("jsdom");
 var exports = (module.exports = {});
 
-exports.cssClasses = function (html) {
+exports.cssClasses = function(html) {
   var classes = []; // empty array
 
-  html.replace(/class=['"][^'"]+/g, function (m) {
+  html.replace(/class=['"][^'"]+/g, function(m) {
     // https://regex101.com/r/jD0wX1/1
     classes = classes.concat(m.match(/[^'"]+$/)[0].split(" ")); // https://regex101.com/r/jD0wX1/2
   }); // take all classes
 
-  classes = classes.filter(function (item, pos) {
+  classes = classes.filter(function(item, pos) {
     if (item.indexOf(":") > 0) {
       // means it is ui buddy unique class
       return classes.indexOf(item) == pos;
@@ -21,30 +21,37 @@ exports.cssClasses = function (html) {
   return classes;
 };
 
-exports.componentClasses = function (html) {
+exports.componentClasses = function(html) {
   var componentClasses = {};
   var dom = new jsdom.JSDOM(html);
   var components = dom.window.document.querySelectorAll("[component]");
+  var tags = dom.window.document.querySelectorAll("[tag]");
 
   if (components.length > 0) {
-    components.forEach((component) => {
-      componentClasses[`${component.getAttribute("component")}`] =
+    components.forEach(component => {
+      componentClasses[`component:${component.getAttribute("component")}`] =
         component.classList.value;
+    });
+  }
+
+  if (tags.length > 0) {
+    tags.forEach(tag => {
+      componentClasses[`tag:${tag.getAttribute("tag")}`] = tag.classList.value;
     });
   }
 
   return componentClasses;
 };
 
-exports.parentStateClasses = function (html) {
+exports.parentStateClasses = function(html) {
   // get a specific class from an array
-  var getParentClasses = function (classList) {
-    return classList.split(" ").filter(function (item, index) {
+  var getParentClasses = function(classList) {
+    return classList.split(" ").filter(function(item, index) {
       return item.indexOf("parent") == 0;
     });
   };
   // to generate class object
-  var getComponentParent = function (el) {
+  var getComponentParent = function(el) {
     let classes = {};
     let parentNode = el.closest(".parent");
     classes["componentName"] = el.getAttribute("component");
@@ -61,12 +68,10 @@ exports.parentStateClasses = function (html) {
   );
 
   if (components.length > 0) {
-    components.forEach((component) => {
+    components.forEach(component => {
       componentClasses.push(getComponentParent(component));
     });
   }
-
-  console.log(componentClasses);
 
   return componentClasses;
 };

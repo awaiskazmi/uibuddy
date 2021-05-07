@@ -1,7 +1,7 @@
 var v = require("./variables.js");
 
 var exports = (module.exports = {});
-exports.Magic = function (simpleClasses, componentClasses, parentStateClasses) {
+exports.Magic = function(simpleClasses, componentClasses, parentStateClasses) {
   // classes = array of unique css classes
   // componentClasses = JSON object with className:classList
   // parentStateClasses = JSON array with componentName, componentParent, and componentClasses
@@ -13,21 +13,21 @@ exports.Magic = function (simpleClasses, componentClasses, parentStateClasses) {
    * 5. Return as string
    */
 
-  var cssValue = function (value) {
+  var cssValue = function(value) {
     return value.split("_").join(" ");
   };
 
-  var className = function (string) {
+  var className = function(string) {
     let symbols = ["#", "(", ")", ",", "%", ".", "'"];
 
-    symbols.forEach(function (value, index) {
+    symbols.forEach(function(value, index) {
       string = string.split(value).join("\\" + value);
     });
 
     return string;
   };
 
-  var makeClass = function (classString) {
+  var makeClass = function(classString) {
     var css = "";
     let classArr = classString.split(":");
 
@@ -122,8 +122,16 @@ exports.Magic = function (simpleClasses, componentClasses, parentStateClasses) {
     return css;
   };
 
-  var makeCss = function (componentClass, classArray) {
+  var makeCss = function(componentClass, classArray) {
     var css = "";
+    var tagOrComponent = componentClass.split(":");
+
+    if (tagOrComponent[0] == "component") {
+      tagOrComponent = "." + tagOrComponent[1];
+    } else {
+      tagOrComponent = tagOrComponent[1];
+    }
+
     for (i = 0; i < classArray.length; i++) {
       let classArr = classArray[i].split(":");
 
@@ -132,13 +140,12 @@ exports.Magic = function (simpleClasses, componentClasses, parentStateClasses) {
         continue;
       } else {
         // if both media query & state added
-        // && classArr[0].indexOf("parent") < 0
         if (classArr.length == 4 && classArr[0].indexOf("parent") < 0) {
           property = v[classArr[2]];
           value = cssValue(classArr[3]);
 
           css += `@media (min-width: ${v[classArr[1]]}px) {`;
-          css += `.${componentClass}:${classArr[0]} { ${property}: ${value}; }`;
+          css += `${tagOrComponent}:${classArr[0]} { ${property}: ${value}; }`;
           css += "}";
         }
 
@@ -156,7 +163,7 @@ exports.Magic = function (simpleClasses, componentClasses, parentStateClasses) {
             classArr[0] == "xl"
           ) {
             css += `@media (min-width: ${v[classArr[0]]}px) {`;
-            css += `.${componentClass} { ${property}: ${value}; }`;
+            css += `${tagOrComponent} { ${property}: ${value}; }`;
             css += "}";
           }
 
@@ -169,7 +176,7 @@ exports.Magic = function (simpleClasses, componentClasses, parentStateClasses) {
             classArr[0] == "disabled" ||
             classArr[0] == "checked"
           ) {
-            css += `.${componentClass}:${classArr[0]} { ${property}: ${value}; }`;
+            css += `${tagOrComponent}:${classArr[0]} { ${property}: ${value}; }`;
           }
 
           // if group state
@@ -191,7 +198,7 @@ exports.Magic = function (simpleClasses, componentClasses, parentStateClasses) {
         if (classArr.length == 2) {
           property = v[classArr[0]];
           value = cssValue(classArr[1]);
-          css += `.${componentClass} { ${property}: ${value}; }`;
+          css += `${tagOrComponent} { ${property}: ${value}; }`;
         }
       }
     }
@@ -199,7 +206,7 @@ exports.Magic = function (simpleClasses, componentClasses, parentStateClasses) {
     return css;
   };
 
-  var makeParentStateCss = function (parentStateClassesObject) {
+  var makeParentStateCss = function(parentStateClassesObject) {
     let css = "";
     // 1. get all classes
     let classes = parentStateClassesObject.componentClasses;
