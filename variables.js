@@ -116,6 +116,7 @@ exports.fl = "flex";
 exports.f = "flex";
 exports.flexBasis = "flex-basis";
 exports.flb = "flex-basis";
+exports.fb = "flex-basis";
 exports.flexDirection = "flex-direction";
 exports.fld = "flex-direction";
 exports.fd = "flex-direction";
