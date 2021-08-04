@@ -21,7 +21,10 @@ exports.Magic = function (simpleClasses, componentClasses, parentStateClasses) {
     let symbols = ["#", "(", ")", ",", "%", ".", "'"];
 
     symbols.forEach(function (value, index) {
-      string = string.split(value).join("\\" + value);
+      string = string
+        .split(value)
+        .join("\\" + value)
+        .trim();
     });
 
     return string;
