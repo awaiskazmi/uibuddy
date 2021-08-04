@@ -1,34 +1,35 @@
 {
-  "name": "uibuddy",
-  "version": "0.1.7",
-  "description": "Build UI components, web pages, and design systems without writing CSS.",
-  "main": "index.js",
-  "repository": "https://github.com/awaiskazmi/uibuddy.git",
-  "homepage": "http://dcodestudios.com/uibuddy",
-  "contributors": [
-    "Awais Kazmi <devs.awais@gmail.com>",
-    "Haleem Ul Hassan <haleemulhasan@hotmail.com>"
-  ],
-  "dependencies": {
-    "autoprefixer": "^10.2.5",
-    "chokidar": "^3.5.1",
-    "concat": "^1.0.3",
-    "css-mqpacker": "^7.0.0",
-    "cssnano": "^5.0.1",
-    "glob": "^7.1.6",
-    "jsdom": "^16.5.3",
-    "mkdirp": "^1.0.4",
-    "postcss": "^8.2.10",
-    "postcss-combine-duplicated-selectors": "^10.0.2",
-    "postcss-discard-duplicates": "^5.0.0",
-    "run-func": "^1.0.5"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "build": "run-func uibuddy.js build",
-    "watch": "run-func uibuddy.js watch"
-  },
-  "keywords": [],
-  "author": "Awais Kazmi",
-  "license": "ISC"
+	"name": "uibuddy",
+	"version": "0.1.7",
+	"version": "0.1.8",
+	"description": "Build UI components, web pages, and design systems without writing CSS.",
+	"main": "index.js",
+	"repository": "https://github.com/awaiskazmi/uibuddy.git",
+	"homepage": "http://dcodestudios.com/uibuddy",
+	"contributors": [
+		"Awais Kazmi <devs.awais@gmail.com>",
+		"Haleem Ul Hassan <haleemulhasan@hotmail.com>"
+	],
+	"dependencies": {
+		"autoprefixer": "^10.2.5",
+		"chokidar": "^3.5.1",
+		"concat": "^1.0.3",
+		"css-mqpacker": "^7.0.0",
+		"cssnano": "^5.0.1",
+		"glob": "^7.1.6",
+		"jsdom": "^16.5.3",
+		"mkdirp": "^1.0.4",
+		"postcss": "^8.2.10",
+		"postcss-combine-duplicated-selectors": "^10.0.2",
+		"postcss-discard-duplicates": "^5.0.0",
+		"run-func": "^1.0.5"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"build": "run-func uibuddy.js build",
+		"watch": "run-func uibuddy.js watch"
+	},
+	"keywords": [],
+	"author": "Awais Kazmi",
+	"license": "ISC"
 }
