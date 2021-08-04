@@ -1,7 +1,7 @@
 var v = require("./variables.js");
 
 var exports = (module.exports = {});
-exports.Magic = function(simpleClasses, componentClasses, parentStateClasses) {
+exports.Magic = function (simpleClasses, componentClasses, parentStateClasses) {
   // classes = array of unique css classes
   // componentClasses = JSON object with className:classList
   // parentStateClasses = JSON array with componentName, componentParent, and componentClasses
@@ -13,21 +13,21 @@ exports.Magic = function(simpleClasses, componentClasses, parentStateClasses) {
    * 5. Return as string
    */
 
-  var cssValue = function(value) {
+  var cssValue = function (value) {
     return value.split("_").join(" ");
   };
 
-  var className = function(string) {
+  var className = function (string) {
     let symbols = ["#", "(", ")", ",", "%", ".", "'"];
 
-    symbols.forEach(function(value, index) {
+    symbols.forEach(function (value, index) {
       string = string.split(value).join("\\" + value);
     });
 
     return string;
   };
 
-  var makeClass = function(classString) {
+  var makeClass = function (classString) {
     var css = "";
     let classArr = classString.split(":");
 
@@ -45,7 +45,7 @@ exports.Magic = function(simpleClasses, componentClasses, parentStateClasses) {
           css += `@media (min-width: ${v[classArr[1]]}px) {`;
           css += `.${classArr[0]}\\:${classArr[1]}\\:${
             classArr[2]
-          }\\:${className(classArr[3])}:${classArr[0]}:${
+          }\\:${className(classArr[3])}:${
             classArr[0]
           } { ${property}: ${value}!important; }`;
           css += "}";
@@ -122,7 +122,7 @@ exports.Magic = function(simpleClasses, componentClasses, parentStateClasses) {
     return css;
   };
 
-  var makeCss = function(componentClass, classArray) {
+  var makeCss = function (componentClass, classArray) {
     var css = "";
     var tagOrComponent = componentClass.split(":");
 
@@ -206,7 +206,7 @@ exports.Magic = function(simpleClasses, componentClasses, parentStateClasses) {
     return css;
   };
 
-  var makeParentStateCss = function(parentStateClassesObject) {
+  var makeParentStateCss = function (parentStateClassesObject) {
     let css = "";
     // 1. get all classes
     let classes = parentStateClassesObject.componentClasses;
