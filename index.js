@@ -22,7 +22,7 @@ const postcss = require("postcss");
 
 // 1. read all files
 const uibuddy = (fileType = 'html') => {
-  glob(process.cwd() + `/*.${fileType}`, {}, function(err, files) {
+  glob(process.cwd() + `/**/*.${fileType}`, {}, function (err, files) {
     console.log(process.cwd());
     // 2. join all files
     concat(files).then(code => {
@@ -49,7 +49,7 @@ const uibuddy = (fileType = 'html') => {
             process.cwd() + "/style.min.css",
             result.css,
             "utf8",
-            function(err, data) {
+            function (err, data) {
               if (err) throw err;
               console.log("\x1b[32m%s\x1b[0m", "UI Buddy build complete!");
             }
