@@ -20,17 +20,17 @@ const glob = require("glob");
 const concat = require("concat");
 const postcss = require("postcss");
 
-// 1. read all html files
-const uibuddy = () => {
-  glob(process.cwd() + "/*.html", {}, function(err, files) {
+// 1. read all files
+const uibuddy = (fileType = 'html') => {
+  glob(process.cwd() + `/*.${fileType}`, {}, function(err, files) {
     console.log(process.cwd());
-    // 2. join all html files
-    concat(files).then(html => {
+    // 2. join all files
+    concat(files).then(code => {
       // 3. parse and generate css
       css = magic.Magic(
-        parser.cssClasses(html), // simple CSS
-        parser.componentClasses(html), // components & tags CSS
-        parser.parentStateClasses(html) // component parent state CSS
+        parser.cssClasses(code), // simple CSS
+        parser.componentClasses(code), // components & tags CSS
+        parser.parentStateClasses(code) // component parent state CSS
       );
       // 4. run postcss
       postcss([
