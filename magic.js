@@ -14,11 +14,11 @@ exports.Magic = function (simpleClasses, componentClasses, parentStateClasses) {
    */
 
   var cssValue = function (value) {
-    return value.split("_").join(" ");
+    return value.split("_").join(" ").split("`").join("\"");
   };
 
   var className = function (string) {
-    let symbols = ["#", "(", ")", ",", "%", ".", "'"];
+    let symbols = ["#", "(", ")", ",", "%", ".", "'", "`"];
 
     symbols.forEach(function (value, index) {
       string = string
@@ -46,19 +46,16 @@ exports.Magic = function (simpleClasses, componentClasses, parentStateClasses) {
         // if no parent-state class present
         if (classArr[0].indexOf("parent") < 0) {
           css += `@media (min-width: ${v[classArr[1]]}px) {`;
-          css += `.${classArr[0]}\\:${classArr[1]}\\:${
-            classArr[2]
-          }\\:${className(classArr[3])}:${
-            classArr[0]
-          } { ${property}: ${value}!important; }`;
+          css += `.${classArr[0]}\\:${classArr[1]}\\:${classArr[2]
+            }\\:${className(classArr[3])}:${classArr[0]
+            } { ${property}: ${value}!important; }`;
           css += "}";
         } else {
           css += `@media (min-width: ${v[classArr[1]]}px) {`;
-          css += `.parent:${classArr[0].split("-")[1]} .${classArr[0]}\\:${
-            classArr[1]
-          }\\:${classArr[2]}\\:${className(
-            classArr[3]
-          )} { ${property}: ${value}!important; }`;
+          css += `.parent:${classArr[0].split("-")[1]} .${classArr[0]}\\:${classArr[1]
+            }\\:${classArr[2]}\\:${className(
+              classArr[3]
+            )} { ${property}: ${value}!important; }`;
           css += "}";
         }
       }
@@ -106,9 +103,8 @@ exports.Magic = function (simpleClasses, componentClasses, parentStateClasses) {
           classArr[0] == "parent-disabled" ||
           classArr[0] == "parent-checked"
         ) {
-          css += `.parent:${classArr[0].split("-")[1]} .${classArr[0]}\\:${
-            classArr[1]
-          }\\:${className(classArr[2])} { ${property}: ${value}!important; }`;
+          css += `.parent:${classArr[0].split("-")[1]} .${classArr[0]}\\:${classArr[1]
+            }\\:${className(classArr[2])} { ${property}: ${value}!important; }`;
         }
       }
 
@@ -191,9 +187,8 @@ exports.Magic = function (simpleClasses, componentClasses, parentStateClasses) {
             classArr[0] == "parent-disabled" ||
             classArr[0] == "parent-checked"
           ) {
-            css += `.parent:${classArr[0].split("-")[1]} .${classArr[0]}\\:${
-              classArr[1]
-            }\\:${className(classArr[2])} { ${property}: ${value}!important; }`;
+            css += `.parent:${classArr[0].split("-")[1]} .${classArr[0]}\\:${classArr[1]
+              }\\:${className(classArr[2])} { ${property}: ${value}!important; }`;
           }
         }
 
